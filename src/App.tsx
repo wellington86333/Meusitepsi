@@ -7,8 +7,58 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 
+// Interfaces
+interface ToastProps {
+    message: string;
+    onClose: () => void;
+}
+
+interface ChatMessage {
+    text: string;
+    sender: 'user' | 'bot';
+}
+
+interface FormState {
+    name: string;
+    email: string;
+    message: string;
+}
+
+interface NavItem {
+    id: string;
+    label: string;
+}
+
+interface Service {
+    icon: JSX.Element;
+    title: string;
+    description: string;
+}
+
+interface DetailedService extends Service {
+    details: string;
+}
+
+interface FAQ {
+    question: string;
+    answer: string;
+}
+
+interface TimeZone {
+    name: string;
+    time: string;
+}
+
+interface Testimonial {
+    name: string;
+    location: string;
+    text: string;
+    image: string;
+    rating: number;
+}
+
 // Simple Toast component
-const Toast = ({ message, onClose }) => (
+const Toast: React.FC<ToastProps> = ({ message, onClose }) => (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded shadow-lg z-50"
         role="alert" aria-live="assertive">
         {message}
@@ -18,21 +68,21 @@ const Toast = ({ message, onClose }) => (
 
 
 export default function App() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [answers, setAnswers] = useState(Array(8).fill(null));
-    const [showResult, setShowResult] = useState(false);
-    const [activeFaq, setActiveFaq] = useState(null);
-    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const [isChatOpen, setIsChatOpen] = useState(false);
-    const [chatMessages, setChatMessages] = useState([]);
-    const [isTyping, setIsTyping] = useState(false);
-    const [activeService, setActiveService] = useState(null);
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const [toast, setToast] = useState(null);
-    const chatRef = useRef(null);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+    const [answers, setAnswers] = useState<(number | null)[]>(Array(8).fill(null));
+    const [showResult, setShowResult] = useState<boolean>(false);
+    const [activeFaq, setActiveFaq] = useState<number | null>(null);
+    const [formState, setFormState] = useState<FormState>({ name: '', email: '', message: '' });
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+    const [scrolled, setScrolled] = useState<boolean>(false);
+    const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
+    const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+    const [isTyping, setIsTyping] = useState<boolean>(false);
+    const [activeService, setActiveService] = useState<number | null>(null);
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+    const [toast, setToast] = useState<string | null>(null);
+    const chatRef = useRef<HTMLDivElement>(null);
 
     // Dark mode toggle effect
     useEffect(() => {
