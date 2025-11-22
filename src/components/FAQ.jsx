@@ -1,31 +1,16 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../LanguageContext';
 
 const FAQ = () => {
-    const faqs = [
-        {
-            question: "Como funciona a primeira consulta?",
-            answer: "A primeira consulta é um momento de acolhimento e conhecimento mútuo. Vamos conversar sobre suas queixas, expectativas e entender como a terapia pode te ajudar."
-        },
-        {
-            question: "Qual a duração das sessões?",
-            answer: "As sessões têm duração média de 50 minutos, realizadas semanalmente ou conforme a necessidade do paciente."
-        },
-        {
-            question: "Aceita convênios?",
-            answer: "Atendo principalmente particular, mas emito recibo para reembolso do seu plano de saúde. Consulte as condições do seu convênio."
-        },
-        {
-            question: "O atendimento é sigiloso?",
-            answer: "Sim, o sigilo é absoluto e garantido pelo Código de Ética Profissional do Psicólogo."
-        }
-    ];
+    const { t } = useLanguage();
+    const faqs = t.faq.items;
 
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <section id="faq" className="py-20 bg-slate-50">
+        <section id="faq" className="py-24 bg-surface">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -34,8 +19,12 @@ const FAQ = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-                        Perguntas Frequentes
+                    <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/10 rounded-full mb-6">
+                        <HelpCircle className="w-4 h-4 text-secondary" />
+                        <span className="text-xs font-bold uppercase tracking-widest text-primary">{t.faq.badge}</span>
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl font-display font-black text-primary mb-4">
+                        {t.faq.title}
                     </h2>
                 </motion.div>
 
@@ -47,23 +36,19 @@ const FAQ = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`bg-white rounded-xl shadow-sm overflow-hidden border transition-all duration-300 ${
-                                openIndex === index ? 'border-teal-500 shadow-md' : 'border-slate-100'
-                            }`}
+                            className={`bg-bg border-2 transition-all duration-300 ${openIndex === index ? 'border-primary shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]' : 'border-transparent hover:border-primary/20'
+                                }`}
                         >
                             <button
-                                className={`w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none transition-colors ${
-                                    openIndex === index ? 'bg-teal-50' : 'hover:bg-slate-50'
-                                }`}
+                                className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none"
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             >
-                                <span className={`font-medium text-lg ${
-                                    openIndex === index ? 'text-teal-700' : 'text-slate-900'
-                                }`}>{faq.question}</span>
+                                <span className={`font-display font-bold text-lg ${openIndex === index ? 'text-primary' : 'text-textSecondary'
+                                    }`}>{faq.question}</span>
                                 {openIndex === index ? (
-                                    <ChevronUp className="text-teal-600" />
+                                    <ChevronUp className="text-secondary" />
                                 ) : (
-                                    <ChevronDown className="text-slate-400" />
+                                    <ChevronDown className="text-textSecondary" />
                                 )}
                             </button>
                             <AnimatePresence>
@@ -73,9 +58,9 @@ const FAQ = () => {
                                         animate={{ height: 'auto', opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="px-6 overflow-hidden"
+                                        className="px-8 overflow-hidden"
                                     >
-                                        <p className="text-slate-600 leading-relaxed pb-6">
+                                        <p className="text-textSecondary font-sans leading-relaxed pb-8 border-t border-primary/5 pt-4">
                                             {faq.answer}
                                         </p>
                                     </motion.div>

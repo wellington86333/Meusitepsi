@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const Hero = () => {
+    const { t } = useLanguage();
+
     return (
         <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-bg">
             {/* Abstract Background Elements */}
@@ -20,12 +23,12 @@ const Hero = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <span className="inline-block py-2 px-4 border border-primary/20 rounded-none text-primary text-sm font-display font-bold tracking-widest uppercase mb-8 w-max">
-                            Psicologia Clínica & Psicanálise
+                            {t.hero.badge}
                         </span>
 
                         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-display font-black text-primary leading-[0.9] mb-8 tracking-tighter">
-                            ENCONTRE <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">EQUILÍBRIO.</span>
+                            {t.hero.title} <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t.hero.titleHighlight}</span>
                         </h1>
 
                         <motion.blockquote
@@ -34,13 +37,12 @@ const Hero = () => {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="text-xl sm:text-2xl font-serif italic text-textSecondary mb-10 pl-6 border-l-4 border-secondary"
                         >
-                            "Out of your vulnerabilities will come your strength."
-                            <footer className="text-sm font-sans not-italic mt-2 text-primary/60">— Sigmund Freud</footer>
+                            "{t.hero.quote}"
+                            <footer className="text-sm font-sans not-italic mt-2 text-primary/60">{t.hero.quoteAuthor}</footer>
                         </motion.blockquote>
 
                         <p className="text-lg text-textSecondary mb-10 leading-relaxed max-w-lg font-sans">
-                            Um espaço seguro e acolhedor para sua jornada de autoconhecimento.
-                            Atendimento especializado para ansiedade, depressão e desenvolvimento pessoal.
+                            {t.hero.description}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6">
@@ -48,14 +50,14 @@ const Hero = () => {
                                 href="#contact"
                                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-bg bg-primary hover:bg-primary/90 transition-all duration-300 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]"
                             >
-                                Agendar Consulta
+                                {t.hero.bookButton}
                                 <ArrowRight className="ml-2 h-5 w-5" />
                             </a>
                             <a
                                 href="#about"
                                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary border-2 border-primary hover:bg-primary hover:text-bg transition-all duration-300"
                             >
-                                Saiba Mais
+                                {t.hero.learnMore}
                             </a>
                         </div>
                     </motion.div>
@@ -91,8 +93,8 @@ const Hero = () => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="font-display font-bold text-primary">Atendimento Online</p>
-                                    <p className="text-sm text-textSecondary font-sans">e Presencial</p>
+                                    <p className="font-display font-bold text-primary">{t.hero.onlineSessions}</p>
+                                    <p className="text-sm text-textSecondary font-sans">{t.hero.inPerson}</p>
                                 </div>
                             </div>
                         </motion.div>

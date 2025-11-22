@@ -1,57 +1,61 @@
 import React from 'react';
-import { Instagram, Linkedin, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const Footer = () => {
+    const { t } = useLanguage();
+
     return (
-        <footer className="bg-primary text-bg py-16 border-t border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid md:grid-cols-12 gap-12 mb-16">
-                    <div className="md:col-span-5">
-                        <h3 className="text-3xl font-display font-black text-white mb-6">
+        <footer className="bg-primary text-bg py-16 border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid md:grid-cols-4 gap-12">
+                    <div className="col-span-2">
+                        <a href="#" className="text-2xl font-display font-black tracking-tighter text-bg mb-6 block">
                             Wellington Brito <span className="text-secondary">PSI</span>
-                        </h3>
-                        <p className="text-gray-400 max-w-sm mb-8 font-sans leading-relaxed">
-                            Psicologia clínica com abordagem humanista. Seu bem-estar emocional é nossa prioridade.
+                        </a>
+                        <p className="text-bg/80 font-sans mb-8 max-w-md leading-relaxed">
+                            {t.footer.description}
                         </p>
-
-                        <blockquote className="text-lg font-serif italic text-accent border-l-2 border-secondary pl-4 my-8">
-                            "The goal of all life is death? No. The goal of all life is to live, and to live well."
-                            <footer className="text-xs font-bold mt-2 text-gray-500 uppercase not-italic">— Sigmund Freud (Paraphrased)</footer>
-                        </blockquote>
+                        <div className="p-6 border border-white/20 bg-white/5 backdrop-blur-sm max-w-md">
+                            <p className="font-serif italic text-lg text-bg/90">
+                                "{t.footer.quote}"
+                            </p>
+                            <p className="text-xs font-bold mt-3 text-secondary uppercase tracking-widest">{t.footer.quoteAuthor}</p>
+                        </div>
                     </div>
 
-                    <div className="md:col-span-3">
-                        <h4 className="text-lg font-bold text-white mb-6 font-display uppercase tracking-wider">Links Rápidos</h4>
-                        <ul className="space-y-3">
-                            <li><a href="#home" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span> Início</a></li>
-                            <li><a href="#about" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span> Sobre</a></li>
-                            <li><a href="#services" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span> Serviços</a></li>
-                            <li><a href="#blog" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span> Blog</a></li>
-                            <li><a href="#contact" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span> Contato</a></li>
+                    <div>
+                        <h4 className="font-display font-bold text-lg mb-6 text-secondary tracking-wider">{t.footer.quickLinks}</h4>
+                        <ul className="space-y-3 font-sans">
+                            <li><a href="#about" className="text-bg/70 hover:text-secondary transition-colors hover:pl-2 duration-300 block">{t.nav.about}</a></li>
+                            <li><a href="#services" className="text-bg/70 hover:text-secondary transition-colors hover:pl-2 duration-300 block">{t.footer.services}</a></li>
+                            <li><a href="#blog" className="text-bg/70 hover:text-secondary transition-colors hover:pl-2 duration-300 block">{t.nav.blog}</a></li>
+                            <li><a href="#contact" className="text-bg/70 hover:text-secondary transition-colors hover:pl-2 duration-300 block">{t.footer.contact}</a></li>
                         </ul>
                     </div>
 
-                    <div className="md:col-span-4">
-                        <h4 className="text-lg font-bold text-white mb-6 font-display uppercase tracking-wider">Conecte-se</h4>
-                        <div className="flex space-x-4 mb-8">
-                            <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-none flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-secondary transition-all duration-300">
-                                <Instagram size={20} />
+                    <div>
+                        <h4 className="font-display font-bold text-lg mb-6 text-secondary tracking-wider">{t.footer.contact}</h4>
+                        <div className="space-y-4 font-sans">
+                            <a href="https://wa.me/447512130453" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-bg/70 hover:text-secondary transition-colors group">
+                                <div className="p-2 bg-white/5 rounded-full group-hover:bg-secondary/20 transition-colors">
+                                    <Phone size={18} />
+                                </div>
+                                <span>+44 7512 130453</span>
                             </a>
-                            <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-none flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-secondary transition-all duration-300">
-                                <Linkedin size={20} />
+                            <a href="mailto:wellington.brito@rocketmail.com" className="flex items-center gap-3 text-bg/70 hover:text-secondary transition-colors group">
+                                <div className="p-2 bg-white/5 rounded-full group-hover:bg-secondary/20 transition-colors">
+                                    <Mail size={18} />
+                                </div>
+                                <span>wellington.brito@rocketmail.com</span>
                             </a>
-                            <a href="#" className="w-12 h-12 bg-white/5 border border-white/10 rounded-none flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-secondary transition-all duration-300">
-                                <Facebook size={20} />
-                            </a>
-                        </div>
-
-                        <div className="bg-white/5 p-6 border border-white/10">
-                            <p className="text-sm text-gray-400 mb-2">Assine nossa newsletter</p>
-                            <div className="flex">
-                                <input type="email" placeholder="Seu e-mail" className="bg-transparent border-b border-gray-600 w-full py-2 text-white focus:outline-none focus:border-secondary transition-colors" />
-                                <button className="text-secondary font-bold uppercase text-sm ml-2 hover:text-white transition-colors">OK</button>
+                            <div className="flex gap-4 mt-6">
+                                <a href="#" className="p-3 bg-white/5 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-none">
+                                    <Instagram size={20} />
+                                </a>
+                                <a href="#" className="p-3 bg-white/5 hover:bg-secondary hover:text-primary transition-all duration-300 rounded-none">
+                                    <Linkedin size={20} />
+                                </a>
                             </div>
                         </div>
                     </div>

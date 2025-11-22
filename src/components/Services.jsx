@@ -1,44 +1,48 @@
 import React from 'react';
 import { Brain, Heart, Users, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../LanguageContext';
 
 const Services = () => {
-    const services = [
-        {
-            title: "Psicoterapia Individual",
-            description: "Espaço para tratar ansiedade, depressão, traumas e questões pessoais em um ambiente seguro.",
-            icon: Brain
-        },
-        {
-            title: "Terapia de Casal",
-            description: "Auxílio na resolução de conflitos, melhoria da comunicação e fortalecimento do vínculo.",
-            icon: Heart
-        },
-        {
-            title: "Orientação Profissional",
-            description: "Suporte para decisões de carreira, transição profissional e desenvolvimento de competências.",
-            icon: Sparkles
-        },
-        {
-            title: "Grupos Terapêuticos",
-            description: "Troca de experiências e crescimento coletivo com mediação profissional.",
-            icon: Users
-        }
-    ];
+    const { t } = useLanguage();
+
+    const icons = [Brain, Heart, Sparkles, Users];
+
+    const services = t.services.items.map((item, index) => ({
+        ...item,
+        icon: icons[index]
+    }));
 
     return (
-        <section id="services" className="py-20 bg-slate-50">
+        <section id="services" className="py-24 bg-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-                        Como posso ajudar você?
-                    </h2>
-                    <p className="text-lg text-slate-600">
-                        Ofereço diferentes modalidades de atendimento para atender às suas necessidades específicas.
-                    </p>
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-secondary font-bold tracking-widest uppercase text-sm"
+                    >
+                        {t.services.badge}
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl sm:text-5xl font-display font-black text-primary mt-4 mb-6"
+                    >
+                        {t.services.title} <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">{t.services.titleHighlight}</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-textSecondary font-sans max-w-2xl mx-auto"
+                    >
+                        {t.services.description}
+                    </motion.p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -46,20 +50,19 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -10, scale: 1.03 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
+                            whileHover={{ y: -5 }}
+                            className="bg-surface p-8 border-2 border-primary/5 hover:border-secondary transition-all duration-300 group relative overflow-hidden"
                         >
-                            <motion.div
-                                whileHover={{ rotate: 360 }}
-                                transition={{ duration: 0.6 }}
-                                className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors"
-                            >
-                                <service.icon size={32} />
-                            </motion.div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">
+                            <div className="absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-secondary/20"></div>
+
+                            <div className="w-14 h-14 bg-primary/5 rounded-none flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-bg transition-colors duration-300">
+                                <service.icon size={28} strokeWidth={1.5} />
+                            </div>
+
+                            <h3 className="text-xl font-display font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-slate-600 leading-relaxed">
+                            <p className="text-textSecondary font-sans leading-relaxed text-sm">
                                 {service.description}
                             </p>
                         </motion.div>

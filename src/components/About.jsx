@@ -1,14 +1,11 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../LanguageContext';
 
 const About = () => {
-    const benefits = [
-        "Abordagem Humanista e Acolhedora",
-        "Sigilo e Ética Profissional",
-        "Experiência em Ansiedade e Depressão",
-        "Atendimento Personalizado"
-    ];
+    const { t } = useLanguage();
+    const benefits = t.about.benefits;
 
     return (
         <section id="about" className="py-24 bg-bg relative overflow-hidden">
@@ -39,10 +36,10 @@ const About = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="absolute bottom-8 right-8 left-8 bg-surface/80 backdrop-blur-md p-6 border border-white/20 shadow-neu"
+                                className="absolute bottom-6 left-6 right-6 bg-surface/95 backdrop-blur-md p-4 border-l-4 border-secondary shadow-lg"
                             >
-                                <p className="font-serif italic text-lg text-primary">
-                                    "The mind is like an iceberg, it floats with one-seventh of its bulk above water."
+                                <p className="font-serif italic text-base text-primary">
+                                    "{t.about.icebergQuote}"
                                 </p>
                                 <p className="text-xs font-bold mt-2 text-secondary uppercase tracking-widest">Sigmund Freud</p>
                             </motion.div>
@@ -57,16 +54,16 @@ const About = () => {
                         className="order-1 lg:order-2"
                     >
                         <h2 className="text-4xl sm:text-5xl font-display font-black text-primary mb-8 leading-tight">
-                            SOBRE <br />
-                            <span className="text-secondary">WELLINGTON BRITO</span>
+                            {t.about.title} <br />
+                            <span className="text-secondary">{t.about.titleHighlight}</span>
                         </h2>
 
                         <div className="space-y-6 text-lg text-textSecondary font-sans leading-relaxed">
                             <p>
-                                Olá, sou Wellington Brito. Como psicólogo clínico, dedico minha carreira a ajudar pessoas a encontrarem caminhos para uma vida mais plena e significativa.
+                                {t.about.paragraph1}
                             </p>
                             <p>
-                                Acredito que cada indivíduo possui uma história única e um potencial inato para o crescimento. Minha abordagem é baseada na escuta ativa, no respeito e na construção de um vínculo terapêutico sólido.
+                                {t.about.paragraph2}
                             </p>
                         </div>
 
