@@ -6,17 +6,20 @@ const Testimonials = () => {
         {
             name: "Maria Silva",
             text: "O Dr. Wellington é um profissional excelente. Me ajudou muito a superar minha ansiedade e ver a vida de outra forma.",
-            rating: 5
+            rating: 5,
+            image: "https://randomuser.me/api/portraits/women/65.jpg"
         },
         {
             name: "João Santos",
             text: "Profissional muito atencioso e competente. As sessões foram fundamentais para meu autoconhecimento.",
-            rating: 5
+            rating: 5,
+            image: "https://randomuser.me/api/portraits/men/45.jpg"
         },
         {
             name: "Ana Oliveira",
             text: "Recomendo muito! Ambiente acolhedor e um profissional que realmente escuta e se importa.",
-            rating: 5
+            rating: 5,
+            image: "https://randomuser.me/api/portraits/women/30.jpg"
         }
     ];
 
@@ -31,19 +34,28 @@ const Testimonials = () => {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="bg-slate-50 p-8 rounded-2xl relative">
-                            <div className="flex gap-1 mb-4 text-yellow-400">
+                        <motion.div
+                            key={index}
+                            className="bg-slate-50 p-8 rounded-2xl relative flex flex-col items-center text-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            whileHover={{ scale: 1.03 }}
+                        >
+                            <img src={testimonial.image} alt={testimonial.name} className="w-24 h-24 rounded-full mb-4 object-cover" />
+                            <div className="flex gap-1 mb-2 text-yellow-400">
                                 {[...Array(testimonial.rating)].map((_, i) => (
                                     <Star key={i} fill="currentColor" size={20} />
                                 ))}
                             </div>
-                            <p className="text-slate-700 mb-6 italic">
+                            <p className="text-slate-700 mb-4 italic">
                                 "{testimonial.text}"
                             </p>
                             <div className="font-bold text-slate-900">
                                 {testimonial.name}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

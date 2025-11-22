@@ -7,6 +7,16 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 
+// Simple Toast component
+const Toast = ({ message, onClose }) => (
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded shadow-lg z-50"
+        role="alert" aria-live="assertive">
+        {message}
+        <button onClick={onClose} className="ml-2 text-gray-300 hover:text-white">✕</button>
+    </div>
+);
+
+
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -20,7 +30,27 @@ export default function App() {
     const [chatMessages, setChatMessages] = useState([]);
     const [isTyping, setIsTyping] = useState(false);
     const [activeService, setActiveService] = useState(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [toast, setToast] = useState(null);
     const chatRef = useRef(null);
+
+    // Dark mode toggle effect
+    useEffect(() => {
+        const root = document.documentElement;
+        if (isDarkMode) {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+    }, [isDarkMode]);
+
+    // Show toast for 4 seconds when set
+    useEffect(() => {
+        if (toast) {
+            const timer = setTimeout(() => setToast(null), 4000);
+            return () => clearTimeout(timer);
+        }
+    }, [toast]);
 
     const { scrollYProgress } = useScroll();
     const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0.9]);
@@ -565,6 +595,136 @@ export default function App() {
                 </div>
             </section>
 
+            {/* Scroll Progress Bar */}
+            <motion.div
+                className="fixed top-0 left-0 h-1 bg-blue-600 z-50" // Changed bg-primary to bg-blue-600 for consistency
+                style={{ scaleX: scrollYProgress }}
+            />
+
+            {/* Video Platforms Section */}
+            <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-3xl mx-auto mb-12"
+                    >
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                            Atendimento nas principais plataformas
+                        </h3>
+                        <p className="text-lg text-gray-600">
+                            Escolha a plataforma de videochamada que você preferir para suas sessões online
+                        </p>
+                    </motion.div>
+
+                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto">
+                        {/* Google Meet */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="flex flex-col items-center group"
+                        >
+                            <div className="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                                <svg className="w-12 h-12" viewBox="0 0 87.5 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo do Google Meet">
+                                    <path d="m49.5 36l8.53 9.75 11.47 7.33 2-17.02-2-16.64-11.69 6.44z" fill="#00832d" />
+                                    <path d="m0 51.5v-31c0-3.87 3.13-7 7-7h33.5v45h-33.5c-3.87 0-7-3.13-7-7z" fill="#0066da" />
+                                    <path d="m40.5 58.5v-45l15.25-6.5 13.25-4.5v66l-13.25-4.5z" fill="#e94235" />
+                                    <path d="m0 20.5v-2.5l20-15h20.5v10.5z" fill="#2684fc" />
+                                    <path d="m69 7l-15.25 6.5-13.25 4.5v-10.5l10-7.5h1.5c3.87 0 7 3.13 7 7v0.5z" fill="#00ac47" />
+                                    <path d="m40.5 58.5v10.5h-20.5l-20-15v-2.5z" fill="#00ac47" />
+                                    <path d="m69 65v0.5c0 3.87-3.13 7-7 7h-1.5l-10-7.5v-10.5l13.25 4.5z" fill="#ffba00" />
+                                </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-700">Google Meet</span>
+                        </motion.div>
+
+                        {/* Zoom */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="flex flex-col items-center group"
+                        >
+                            <div className="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                                <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo do Zoom">
+                                    <path fill="#2196F3" d="M41,42H13c-2.2,0-4-1.8-4-4V18c0-2.2,1.8-4,4-4h28c2.2,0,4,1.8,4,4v20C45,40.2,43.2,42,41,42z" />
+                                    <path fill="#FFF" d="M35 36L35 26 30 29 30 23 18 23 18 33 23 30 23 36z" />
+                                </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-700">Zoom</span>
+                        </motion.div>
+
+                        {/* WhatsApp Video */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="flex flex-col items-center group"
+                        >
+                            <div className="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                                <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo do WhatsApp">
+                                    <path fill="#25D366" d="M24,4C13,4,4,13,4,24c0,3.4,0.8,6.6,2.3,9.5L4,44l10.7-2.3C17.6,43.2,20.7,44,24,44c11,0,20-9,20-20S35,4,24,4z" />
+                                    <path fill="#FFF" d="M35.2,32.5c-0.5,1.4-2.9,2.6-4.1,2.7c-1.1,0.1-2.1,0.5-7.1-1.5c-6-2.4-9.9-8.5-10.2-8.9c-0.3-0.4-2.4-3.2-2.4-6.1s1.5-4.3,2.1-4.9c0.5-0.6,1.1-0.7,1.5-0.7c0.4,0,0.7,0,1,0c0.3,0,0.8-0.1,1.2,0.9c0.5,1,1.6,3.9,1.7,4.2c0.2,0.3,0.3,0.6,0.1,1c-0.1,0.4-0.3,0.6-0.5,0.9c-0.3,0.3-0.6,0.6-0.8,0.8c-0.3,0.3-0.6,0.6-0.2,1.1c0.3,0.6,1.4,2.3,3.1,3.7c2.1,1.8,3.9,2.4,4.5,2.6c0.5,0.2,0.8,0.2,1.1-0.1c0.3-0.4,1.2-1.4,1.5-1.9c0.4-0.5,0.7-0.4,1.2-0.2c0.5,0.2,3,1.4,3.5,1.7c0.5,0.2,0.9,0.4,1,0.6C35.7,30.3,35.7,31.1,35.2,32.5z" />
+                                </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-700">WhatsApp</span>
+                        </motion.div>
+
+                        {/* Microsoft Teams */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="flex flex-col items-center group"
+                        >
+                            <div className="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                                <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo do Microsoft Teams">
+                                    <path fill="#5059C9" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z" />
+                                    <path fill="#FFF" d="M25.5,18h-7C17.7,18,17,18.7,17,19.5v9c0,0.8,0.7,1.5,1.5,1.5h7c0.8,0,1.5-0.7,1.5-1.5v-9C27,18.7,26.3,18,25.5,18z M31,18h-2v12h2c0.8,0,1.5-0.7,1.5-1.5v-9C32.5,18.7,31.8,18,31,18z M22,14c-1.7,0-3,1.3-3,3s1.3,3,3,3s3-1.3,3-3S23.7,14,22,14z" />
+                                </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-700">Teams</span>
+                        </motion.div>
+
+                        {/* Skype */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="flex flex-col items-center group"
+                        >
+                            <div className="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+                                <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo do Skype">
+                                    <path fill="#00AFF0" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z" />
+                                    <path fill="#FFF" d="M32.5,27.5c0,3-2.5,5.5-5.5,5.5c-0.9,0-1.7-0.2-2.4-0.6c-0.8,0.4-1.7,0.6-2.6,0.6c-3,0-5.5-2.5-5.5-5.5c0-0.9,0.2-1.8,0.6-2.6c-0.4-0.7-0.6-1.5-0.6-2.4c0-3,2.5-5.5,5.5-5.5c0.9,0,1.8,0.2,2.6,0.6c0.7-0.4,1.5-0.6,2.4-0.6c3,0,5.5,2.5,5.5,5.5c0,0.9-0.2,1.7-0.6,2.4C32.3,25.7,32.5,26.6,32.5,27.5z M27,20c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S29.2,20,27,20z" />
+                                </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-700">Skype</span>
+                        </motion.div>
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="text-center mt-8"
+                    >
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Flexibilidade total para você escolher a plataforma que melhor se adapta às suas necessidades e preferências
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* About Section */}
             <section id="about" className="py-20 bg-white">
                 <div className="container mx-auto px-4">
@@ -596,6 +756,7 @@ export default function App() {
                                             </div>
                                         `;
                                     }}
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-purple-200 rounded-full opacity-40"></div>
@@ -675,6 +836,8 @@ export default function App() {
                                 <button
                                     onClick={() => toggleFaq(index)}
                                     className={`w-full flex justify-between items-center p-6 text-left ${activeFaq === index ? 'bg-blue-50' : 'bg-gray-50 hover:bg-gray-100'} transition-colors`}
+                                    aria-expanded={activeFaq === index}
+                                    aria-controls={`faq-answer-${index}`}
                                 >
                                     <span className={`text-lg font-medium ${activeFaq === index ? 'text-blue-700' : 'text-gray-900'}`}>{faq.question}</span>
                                     {activeFaq === index ? (
@@ -686,6 +849,7 @@ export default function App() {
                                 <AnimatePresence>
                                     {activeFaq === index && (
                                         <motion.div
+                                            id={`faq-answer-${index}`}
                                             initial={{ opacity: 0, height: 0 }}
                                             animate={{ opacity: 1, height: "auto" }}
                                             exit={{ opacity: 0, height: 0 }}
@@ -727,11 +891,12 @@ export default function App() {
                             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
                                 <div className="flex justify-between items-center">
                                     <span className="font-bold">Pergunta {currentQuestion + 1} de 8</span>
-                                    <div className="flex space-x-1">
+                                    <div className="flex space-x-1" role="progressbar" aria-valuenow={currentQuestion + 1} aria-valuemin="1" aria-valuemax="8" aria-label="Progresso do teste">
                                         {[...Array(8)].map((_, index) => (
                                             <div
                                                 key={index}
                                                 className={`w-2 h-2 rounded-full ${index <= currentQuestion ? 'bg-white' : 'bg-blue-200'}`}
+                                                aria-label={`Pergunta ${index + 1}`}
                                             ></div>
                                         ))}
                                     </div>
@@ -739,7 +904,7 @@ export default function App() {
                             </div>
 
                             <div className="p-6 md:p-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-6" id={`question-${currentQuestion}`}>
                                     {currentQuestion + 1}. {[
                                         "Nas últimas 2 semanas, com que frequência você se sentiu triste ou deprimido?",
                                         "Você tem sentido dificuldade em concentrar-se em tarefas diárias?",
@@ -752,7 +917,7 @@ export default function App() {
                                     ][currentQuestion]}
                                 </h3>
 
-                                <div className="space-y-4 mb-8">
+                                <div className="space-y-4 mb-8" role="radiogroup" aria-labelledby={`question-${currentQuestion}`}>
                                     {[
                                         ["Nunca", 0],
                                         ["Alguns dias / Raramente", 1],
@@ -766,6 +931,9 @@ export default function App() {
                                                 ? "border-blue-500 bg-blue-50 ring-2 ring-blue-500"
                                                 : "border-gray-200 hover:border-blue-300 hover:bg-blue-50"
                                                 }`}
+                                            role="radio"
+                                            aria-checked={answers[currentQuestion] === value}
+                                            aria-label={text}
                                         >
                                             {text}
                                         </button>
@@ -780,6 +948,7 @@ export default function App() {
                                             ? "text-gray-400 cursor-not-allowed"
                                             : "text-blue-600 hover:bg-blue-50"
                                             }`}
+                                        aria-label="Pergunta anterior"
                                     >
                                         <ArrowLeft className="mr-2 h-4 w-4" />
                                         Anterior
@@ -793,6 +962,7 @@ export default function App() {
                                                 ? "bg-gray-300 cursor-not-allowed"
                                                 : "bg-blue-600 text-white hover:bg-blue-700"
                                                 }`}
+                                            aria-label="Próxima pergunta"
                                         >
                                             Próxima
                                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -801,6 +971,7 @@ export default function App() {
                                         <button
                                             onClick={submitTest}
                                             className="px-6 py-3 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 transition-colors flex items-center"
+                                            aria-label="Ver resultado do teste"
                                         >
                                             Ver Resultado
                                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -814,11 +985,13 @@ export default function App() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 p-8 text-center"
+                            role="region"
+                            aria-labelledby="test-result-heading"
                         >
                             <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Check className="w-8 h-8 text-green-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Resultado do Teste</h3>
+                            <h3 id="test-result-heading" className="text-2xl font-bold text-gray-900 mb-4">Resultado do Teste</h3>
                             <p className="text-lg text-gray-700 mb-6">{calculateResult()}</p>
 
                             <div className="bg-blue-50 rounded-xl p-6 mb-8">
@@ -831,6 +1004,7 @@ export default function App() {
                                 <button
                                     onClick={resetTest}
                                     className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                    aria-label="Fazer um novo teste"
                                 >
                                     Fazer Novo Teste
                                 </button>
@@ -839,6 +1013,7 @@ export default function App() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-6 py-3 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 transition-colors flex items-center justify-center"
+                                    aria-label="Agendar consulta via WhatsApp"
                                 >
                                     <Phone className="mr-2 h-5 w-5" />
                                     Agendar Consulta
@@ -873,7 +1048,7 @@ export default function App() {
 
                     <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         {isSubmitted ? (
-                            <div className="p-12 text-center">
+                            <div className="p-12 text-center" role="status" aria-live="polite">
                                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <Check className="w-8 h-8 text-green-600" />
                                 </div>
@@ -884,6 +1059,7 @@ export default function App() {
                                 <button
                                     onClick={() => setIsSubmitted(false)}
                                     className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                    aria-label="Enviar nova mensagem"
                                 >
                                     Enviar Nova Mensagem
                                 </button>
@@ -894,7 +1070,7 @@ export default function App() {
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Seu nome</label>
                                         <div className="relative">
-                                            <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" aria-hidden="true" />
                                             <input
                                                 id="name"
                                                 type="text"
@@ -903,13 +1079,14 @@ export default function App() {
                                                 className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                                                 placeholder="Digite seu nome completo"
                                                 required
+                                                aria-required="true"
                                             />
                                         </div>
                                     </div>
                                     <div>
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Seu e-mail</label>
                                         <div className="relative">
-                                            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" aria-hidden="true" />
                                             <input
                                                 id="email"
                                                 type="email"
@@ -918,6 +1095,7 @@ export default function App() {
                                                 className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                                                 placeholder="seuemail@dominio.com"
                                                 required
+                                                aria-required="true"
                                             />
                                         </div>
                                     </div>
@@ -926,7 +1104,7 @@ export default function App() {
                                 <div className="mb-6">
                                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Escreva sua mensagem</label>
                                     <div className="relative">
-                                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" aria-hidden="true" />
                                         <textarea
                                             id="message"
                                             value={formState.message}
@@ -935,6 +1113,7 @@ export default function App() {
                                             className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
                                             placeholder="Como posso ajudar você hoje?"
                                             required
+                                            aria-required="true"
                                         ></textarea>
                                     </div>
                                 </div>
@@ -942,6 +1121,7 @@ export default function App() {
                                 <button
                                     type="submit"
                                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 flex items-center justify-center shadow-lg"
+                                    aria-label="Enviar mensagem de contato"
                                 >
                                     <Send className="mr-2 h-5 w-5" />
                                     Enviar Mensagem
@@ -966,6 +1146,7 @@ export default function App() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center bg-green-600 text-white font-bold py-4 px-8 rounded-xl hover:bg-green-700 transition-colors shadow-lg"
+                            aria-label="Fale diretamente pelo WhatsApp"
                         >
                             <Phone className="mr-3 h-6 w-6" />
                             <span className="text-lg">Fale diretamente pelo WhatsApp</span>
@@ -1008,10 +1189,12 @@ export default function App() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.2 }}
                                 className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300"
+                                role="article"
+                                aria-labelledby={`testimonial-name-${index}`}
                             >
-                                <div className="flex mb-4">
+                                <div className="flex mb-4" role="img" aria-label={`${testimonial.rating} estrelas`}>
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" aria-hidden="true" />
                                     ))}
                                 </div>
                                 <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
@@ -1020,9 +1203,10 @@ export default function App() {
                                         src={testimonial.image}
                                         alt={testimonial.name}
                                         className="w-12 h-12 rounded-full mr-4 object-cover border-2 border-gray-200"
+                                        loading="lazy"
                                     />
                                     <div>
-                                        <p className="font-bold text-gray-900">{testimonial.name}</p>
+                                        <p id={`testimonial-name-${index}`} className="font-bold text-gray-900">{testimonial.name}</p>
                                         <p className="text-sm text-blue-600">{testimonial.location}</p>
                                     </div>
                                 </div>
@@ -1034,23 +1218,92 @@ export default function App() {
 
             {/* Footer */}
             <footer className="bg-gray-900 text-white py-12">
-                <div className="container mx-auto px-4 text-center">
-                    <div className="flex items-center justify-center space-x-2 mb-4">
-                        <div className="bg-blue-600 p-2 rounded-lg">
-                            <Brain className="w-6 h-6 text-white" />
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                        <div>
+                            <div className="flex items-center space-x-2 mb-4">
+                                <div className="bg-blue-600 p-2 rounded-lg">
+                                    <Brain className="w-6 h-6 text-white" />
+                                </div>
+                                <span className="text-xl font-bold">Wellington Brito PSI</span>
+                            </div>
+                            <p className="text-gray-300 mb-4">
+                                Cuidando da sua saúde mental com profissionalismo, empatia e confidencialidade total. Psicoterapia online de qualidade para transformar sua vida.
+                            </p>
+                            <div className="flex space-x-4">
+                                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full transition-colors shadow-lg hover:scale-110" aria-label="Entrar em contato via WhatsApp">
+                                    <Phone className="w-6 h-6" />
+                                </a>
+                                <button onClick={() => setIsChatOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors shadow-lg hover:scale-110" aria-label="Abrir chat com assistente virtual">
+                                    <Bot className="w-6 h-6" />
+                                </button>
+                            </div>
                         </div>
-                        <span className="text-xl font-bold">Wellington Brito PSI</span>
+
+                        <div>
+                            <h3 className="text-lg font-bold mb-4 flex items-center">
+                                <MapPin className="mr-2 h-5 w-5 text-blue-400" />
+                                Serviços
+                            </h3>
+                            <ul className="space-y-2 text-gray-300">
+                                <li>Psicoterapia Individual</li>
+                                <li>Apoio Emocional</li>
+                                <li>Orientação Profissional</li>
+                                <li>Atendimento no Brasil e Exterior</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-bold mb-4 flex items-center">
+                                <HelpCircle className="mr-2 h-5 w-5 text-blue-400" />
+                                Recursos
+                            </h3>
+                            <ul className="space-y-2 text-gray-300">
+                                <li><a href="#test" className="hover:text-white transition-colors">Teste Gratuito</a></li>
+                                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                                <li><a href="#about" className="hover:text-white transition-colors">Sobre</a></li>
+                                <li><a href="#contact" className="hover:text-white transition-colors">Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-bold mb-4">Contato</h3>
+                            <div className="bg-gray-800 rounded-xl p-4">
+                                <p className="font-bold text-blue-400 mb-2">CRP: 02/15189</p>
+                                <p className="text-sm text-gray-300 mb-3">
+                                    Atendimento psicológico online realizado por profissional registrado no Conselho Federal de Psicologia.
+                                </p>
+                                <a
+                                    href={whatsappLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-3 inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
+                                    aria-label="Ligar para o número de WhatsApp +44 7512 130453"
+                                >
+                                    <Phone className="w-4 h-4 mr-2" />
+                                    <span>+44 7512 130453</span>
+                                </a>
+                                <br />
+                                <a
+                                    href={`mailto:${email}`}
+                                    className="mt-2 inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                                    aria-label={`Enviar e-mail para ${email}`}
+                                >
+                                    <Mail className="w-4 h-4 mr-2" />
+                                    <span>{email}</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <p className="text-gray-300 mb-4">
-                        Cuidando da sua saúde mental com profissionalismo, empatia e confidencialidade total.
-                    </p>
-                    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+
+                    <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
                         <p>© 2025 Wellington Brito. Todos os direitos reservados.</p>
                         <p className="mt-1">CRP: 02/15189 | Psicoterapia online para brasileiros no Brasil e no exterior</p>
                     </div>
                 </div>
             </footer>
-
+            {/* Toast Notification */}
+            {toast && <Toast message={toast} onClose={() => setToast(null)} />}
         </div>
     );
 }
