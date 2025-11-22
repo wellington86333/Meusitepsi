@@ -452,6 +452,605 @@ export default function App() {
                 )}
             </motion.header>
 
+            {/* Hero Section */}
+            <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-r from-blue-50 to-indigo-50 relative overflow-hidden">
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                    <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+                </div>
+
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+                    >
+                        Cuidar da sua mente <span className="text-blue-600">é essencial</span> para viver bem
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-10"
+                    >
+                        Wellington Brito | CRP 02/15189
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-2xl mx-auto mb-10 border border-gray-100"
+                    >
+                        <p className="text-lg text-gray-700 mb-6 text-left">
+                            {heroText}
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a
+                                href="#test"
+                                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center transform hover:scale-105"
+                            >
+                                <MessageSquare className="mr-2 h-5 w-5" />
+                                Teste Gratuito
+                            </a>
+                            <a
+                                href={whatsappLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center transform hover:scale-105"
+                            >
+                                <Phone className="mr-2 h-5 w-5" />
+                                Agendar Consulta
+                            </a>
+                        </div>
+                    </motion.div>
+
+                    {/* Indicador de rolagem */}
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="mt-8 mx-auto w-8 h-12 border-2 border-blue-600 rounded-full flex items-center justify-center text-blue-600"
+                    >
+                        <ChevronDown className="w-6 h-6" />
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Services Overview */}
+            <section id="services" className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="text-center max-w-3xl mx-auto mb-16"
+                    >
+                        <motion.h2
+                            variants={itemVariants}
+                            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+                        >
+                            Por que escolher a Wellington Brito Psi?
+                        </motion.h2>
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-lg text-gray-600"
+                        >
+                            Oferecemos um atendimento completo com foco no seu bem-estar emocional
+                        </motion.p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {services.map((service, index) => (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+                                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center transition-all duration-300 border border-gray-100 hover:shadow-lg hover:scale-105 relative overflow-hidden group"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                                <div className="relative z-10">
+                                    <div className="flex justify-center mb-6">
+                                        {service.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors">{service.title}</h3>
+                                    <p className="text-gray-600 group-hover:text-white transition-colors">{service.description}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* About Section */}
+            <section id="about" className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative"
+                        >
+                            <div className="bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl w-full h-96 md:h-[400px] shadow-xl overflow-hidden flex items-center justify-center">
+                                <img
+                                    src="/wellington-brito-about.jpg"
+                                    alt="Wellington Brito - Psicólogo Clínico"
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none';
+                                        e.target.parentElement.innerHTML = `
+                                            <div class="text-center text-white p-8">
+                                                <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                                    <svg class="w-16 h-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                </div>
+                                                <h3 class="text-2xl font-bold mb-2">Wellington Brito</h3>
+                                                <p class="text-xl font-semibold mb-1">CRP 02/15189</p>
+                                                <p class="opacity-90">Psicólogo Clínico</p>
+                                            </div>
+                                        `;
+                                    }}
+                                />
+                            </div>
+                            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-purple-200 rounded-full opacity-40"></div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                                Sobre Mim
+                            </h2>
+                            <p className="text-lg text-gray-700 mb-6">
+                                Sou Wellington Brito, Psicólogo Clínico (CRP 02/15189), especializado em atendimentos individuais e fundamentado na abordagem psicanalítica. Minha atuação é voltada para o cuidado integral da saúde mental, oferecendo um espaço de escuta qualificada, ética e acolhedora.
+                            </p>
+
+                            <div className="bg-blue-50 rounded-xl p-6 mb-8 border-l-4 border-blue-500">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                                    <Brain className="mr-3 text-blue-600" />
+                                    Meu Compromisso com a Psicanálise
+                                </h3>
+                                <p className="text-gray-700">
+                                    Na clínica, trabalho com psicoterapia psicanalítica, um processo que promove autoconhecimento, elaboração de conflitos internos e a cura pela palavra. A psicanálise permite compreender as origens do sofrimento psíquico, indo além do alívio imediato de sintomas, e possibilita transformações profundas e duradouras na forma de viver e se relacionar.
+                                </p>
+                            </div>
+
+                            <p className="text-gray-700 mb-6">
+                                Atendo adultos e jovens em questões como ansiedade, depressão, angústia existencial, relacionamentos, autoestima, luto, estresse e dificuldades emocionais diversas. Cada encontro é construído como um espaço seguro para que o sujeito possa se ouvir, ressignificar experiências e desenvolver novos caminhos em direção a uma vida mais autêntica e equilibrada.
+                            </p>
+
+                            <div className="flex items-center space-x-4 bg-green-50 p-4 rounded-lg">
+                                <Shield className="w-8 h-8 text-green-600" />
+                                <div>
+                                    <p className="font-bold text-gray-900">Psicólogo com CRP Ativo</p>
+                                    <p className="text-gray-700">Atendimento profissional e ético, seguindo todas as diretrizes do Conselho Federal de Psicologia.</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section id="faq" className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-3xl mx-auto mb-16"
+                    >
+                        <div className="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full mb-4 font-medium">
+                            <HelpCircle className="inline mr-1 h-4 w-4" />
+                            Perguntas Frequentes
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Tire suas dúvidas
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            Encontre respostas para as perguntas mais comuns sobre nossos serviços
+                        </p>
+                    </motion.div>
+
+                    <div className="max-w-3xl mx-auto">
+                        {faqs.map((faq, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className={`mb-4 border ${activeFaq === index ? 'border-blue-500' : 'border-gray-200'} rounded-xl overflow-hidden`}
+                            >
+                                <button
+                                    onClick={() => toggleFaq(index)}
+                                    className={`w-full flex justify-between items-center p-6 text-left ${activeFaq === index ? 'bg-blue-50' : 'bg-gray-50 hover:bg-gray-100'} transition-colors`}
+                                >
+                                    <span className={`text-lg font-medium ${activeFaq === index ? 'text-blue-700' : 'text-gray-900'}`}>{faq.question}</span>
+                                    {activeFaq === index ? (
+                                        <ChevronUp className="w-6 h-6 text-blue-600" />
+                                    ) : (
+                                        <ChevronDown className="w-6 h-6 text-gray-400" />
+                                    )}
+                                </button>
+                                <AnimatePresence>
+                                    {activeFaq === index && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: "auto" }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            className="px-6 pb-6 pt-2 text-gray-600"
+                                        >
+                                            {faq.answer}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Free Test Section */}
+            <section id="test" className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-3xl mx-auto mb-16"
+                    >
+                        <div className="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full mb-4 font-medium">
+                            100% Gratuito • Resultado Imediato • Totalmente Anônimo
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Teste Gratuito de Necessidade de Psicoterapia
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            Este teste rápido e confidencial ajuda a avaliar seu estado emocional atual e identificar se você pode se beneficiar de apoio psicológico profissional.
+                        </p>
+                    </motion.div>
+
+                    {!showResult ? (
+                        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+                                <div className="flex justify-between items-center">
+                                    <span className="font-bold">Pergunta {currentQuestion + 1} de 8</span>
+                                    <div className="flex space-x-1">
+                                        {[...Array(8)].map((_, index) => (
+                                            <div
+                                                key={index}
+                                                className={`w-2 h-2 rounded-full ${index <= currentQuestion ? 'bg-white' : 'bg-blue-200'}`}
+                                            ></div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-6 md:p-8">
+                                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                                    {currentQuestion + 1}. {[
+                                        "Nas últimas 2 semanas, com que frequência você se sentiu triste ou deprimido?",
+                                        "Você tem sentido dificuldade em concentrar-se em tarefas diárias?",
+                                        "Com que frequência você se sente ansioso ou preocupado excessivamente?",
+                                        "Você tem tido dificuldade para dormir (insônia ou sono excessivo)?",
+                                        "Você sente que perdeu o interesse em atividades que antes gostava?",
+                                        "Você se sente sobrecarregado(a) com as responsabilidades diárias?",
+                                        "Você tem sentido dificuldade em manter relacionamentos saudáveis?",
+                                        "Você sente que sua autoestima está baixa ultimamente?"
+                                    ][currentQuestion]}
+                                </h3>
+
+                                <div className="space-y-4 mb-8">
+                                    {[
+                                        ["Nunca", 0],
+                                        ["Alguns dias / Raramente", 1],
+                                        ["Mais da metade dos dias / Frequentemente", 2],
+                                        ["Quase todos os dias / Sempre", 3]
+                                    ].map(([text, value]) => (
+                                        <button
+                                            key={text}
+                                            onClick={() => handleAnswer(currentQuestion, value)}
+                                            className={`w-full text-left p-4 rounded-xl border transition-all ${answers[currentQuestion] === value
+                                                ? "border-blue-500 bg-blue-50 ring-2 ring-blue-500"
+                                                : "border-gray-200 hover:border-blue-300 hover:bg-blue-50"
+                                                }`}
+                                        >
+                                            {text}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <div className="flex justify-between pt-4 border-t border-gray-100">
+                                    <button
+                                        onClick={prevQuestion}
+                                        disabled={currentQuestion === 0}
+                                        className={`px-6 py-3 rounded-xl font-medium flex items-center ${currentQuestion === 0
+                                            ? "text-gray-400 cursor-not-allowed"
+                                            : "text-blue-600 hover:bg-blue-50"
+                                            }`}
+                                    >
+                                        <ArrowLeft className="mr-2 h-4 w-4" />
+                                        Anterior
+                                    </button>
+
+                                    {currentQuestion < 7 ? (
+                                        <button
+                                            onClick={nextQuestion}
+                                            disabled={answers[currentQuestion] === null}
+                                            className={`px-6 py-3 rounded-xl font-medium flex items-center ${answers[currentQuestion] === null
+                                                ? "bg-gray-300 cursor-not-allowed"
+                                                : "bg-blue-600 text-white hover:bg-blue-700"
+                                                }`}
+                                        >
+                                            Próxima
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={submitTest}
+                                            className="px-6 py-3 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 transition-colors flex items-center"
+                                        >
+                                            Ver Resultado
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 p-8 text-center"
+                        >
+                            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <Check className="w-8 h-8 text-green-600" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Resultado do Teste</h3>
+                            <p className="text-lg text-gray-700 mb-6">{calculateResult()}</p>
+
+                            <div className="bg-blue-50 rounded-xl p-6 mb-8">
+                                <p className="text-gray-700 italic">
+                                    Este teste oferece uma avaliação preliminar e não substitui uma consulta com um profissional de saúde mental. Recomendamos agendar uma sessão para uma avaliação completa e personalizada.
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button
+                                    onClick={resetTest}
+                                    className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                >
+                                    Fazer Novo Teste
+                                </button>
+                                <a
+                                    href={whatsappLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-green-600 text-white rounded-xl font-medium hover:bg-green-700 transition-colors flex items-center justify-center"
+                                >
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Agendar Consulta
+                                </a>
+                            </div>
+                        </motion.div>
+                    )}
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="py-20 bg-gradient-to-b from-purple-50 to-white">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-3xl mx-auto mb-16"
+                    >
+                        <div className="inline-block bg-yellow-100 text-yellow-800 px-4 py-1 rounded-full mb-4 font-medium">
+                            <Mail className="inline mr-1 h-4 w-4" />
+                            Entre em Contato
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Vamos conversar
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            Envie sua mensagem ou agende uma conversa inicial sem compromisso
+                        </p>
+                    </motion.div>
+
+                    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                        {isSubmitted ? (
+                            <div className="p-12 text-center">
+                                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <Check className="w-8 h-8 text-green-600" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4">Mensagem Enviada!</h3>
+                                <p className="text-gray-600 mb-6">
+                                    Obrigado por entrar em contato! Responderemos sua mensagem em breve.
+                                </p>
+                                <button
+                                    onClick={() => setIsSubmitted(false)}
+                                    className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                >
+                                    Enviar Nova Mensagem
+                                </button>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="p-6 md:p-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Seu nome</label>
+                                        <div className="relative">
+                                            <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <input
+                                                id="name"
+                                                type="text"
+                                                value={formState.name}
+                                                onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                                                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                                                placeholder="Digite seu nome completo"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Seu e-mail</label>
+                                        <div className="relative">
+                                            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                            <input
+                                                id="email"
+                                                type="email"
+                                                value={formState.email}
+                                                onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                                                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                                                placeholder="seuemail@dominio.com"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mb-6">
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Escreva sua mensagem</label>
+                                    <div className="relative">
+                                        <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                                        <textarea
+                                            id="message"
+                                            value={formState.message}
+                                            onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                                            rows="5"
+                                            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+                                            placeholder="Como posso ajudar você hoje?"
+                                            required
+                                        ></textarea>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 flex items-center justify-center shadow-lg"
+                                >
+                                    <Send className="mr-2 h-5 w-5" />
+                                    Enviar Mensagem
+                                </button>
+
+                                <p className="mt-4 text-sm text-gray-500 text-center">
+                                    Respeitamos sua privacidade. Suas informações são mantidas em total sigilo.
+                                </p>
+                            </form>
+                        )}
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="mt-12 text-center"
+                    >
+                        <a
+                            href={whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center bg-green-600 text-white font-bold py-4 px-8 rounded-xl hover:bg-green-700 transition-colors shadow-lg"
+                        >
+                            <Phone className="mr-3 h-6 w-6" />
+                            <span className="text-lg">Fale diretamente pelo WhatsApp</span>
+                        </a>
+                        <p className="mt-3 text-gray-600 text-lg font-medium">
+                            Resposta rápida e atendimento personalizado para brasileiros no Brasil e no exterior
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="py-20 bg-gradient-to-b from-white to-indigo-50">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-3xl mx-auto mb-16"
+                    >
+                        <div className="inline-block bg-yellow-100 text-yellow-800 px-4 py-1 rounded-full mb-4 font-medium">
+                            <Star className="inline mr-1 h-4 w-4" />
+                            Depoimentos
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            O que meus clientes dizem
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            Experiências reais de brasileiros atendidos no Brasil e no exterior
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {testimonials.map((testimonial, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300"
+                            >
+                                <div className="flex mb-4">
+                                    {[...Array(testimonial.rating)].map((_, i) => (
+                                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                                    ))}
+                                </div>
+                                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                                <div className="flex items-center">
+                                    <img
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="w-12 h-12 rounded-full mr-4 object-cover border-2 border-gray-200"
+                                    />
+                                    <div>
+                                        <p className="font-bold text-gray-900">{testimonial.name}</p>
+                                        <p className="text-sm text-blue-600">{testimonial.location}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-gray-900 text-white py-12">
+                <div className="container mx-auto px-4 text-center">
+                    <div className="flex items-center justify-center space-x-2 mb-4">
+                        <div className="bg-blue-600 p-2 rounded-lg">
+                            <Brain className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-xl font-bold">Wellington Brito PSI</span>
+                    </div>
+                    <p className="text-gray-300 mb-4">
+                        Cuidando da sua saúde mental com profissionalismo, empatia e confidencialidade total.
+                    </p>
+                    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                        <p>© 2025 Wellington Brito. Todos os direitos reservados.</p>
+                        <p className="mt-1">CRP: 02/15189 | Psicoterapia online para brasileiros no Brasil e no exterior</p>
+                    </div>
+                </div>
+            </footer>
+
         </div>
     );
 }
