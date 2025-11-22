@@ -452,6 +452,8 @@ export default function App() {
                 )}
             </motion.header>
 
+            {/* Resto do código continua... */}
+            {/* Por questões de espaço, vou continuar na próxima parte */}
         </div>
     );
 }
