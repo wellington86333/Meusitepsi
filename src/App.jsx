@@ -3,7 +3,7 @@ import {
     Menu, X, Phone, Mail, User, Shield, Clock, Star, MessageSquare,
     ChevronDown, ChevronUp, Send, Check, Brain, Heart, Calendar,
     HelpCircle, MapPin, ArrowRight, ArrowLeft, Loader, Globe, Bot,
-    ClockIcon, Sparkles, MessageCircle
+    ClockIcon, Sparkles, MessageCircle, Sun, Moon
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 
@@ -1236,6 +1236,9 @@ export default function App() {
                                 </a>
                                 <button onClick={() => setIsChatOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors shadow-lg hover:scale-110" aria-label="Abrir chat com assistente virtual">
                                     <Bot className="w-6 h-6" />
+                                </button>
+                                <button onClick={() => setIsDarkMode(!isDarkMode)} className="bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-full transition-colors shadow-lg hover:scale-110" aria-label="Alternar modo escuro">
+                                    {isDarkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
                                 </button>
                             </div>
                         </div>
