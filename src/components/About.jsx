@@ -11,7 +11,10 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-24 bg-bg relative overflow-hidden">
+            {/* Decorative Elements */}
+            <div className="absolute top-20 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <motion.div
@@ -19,18 +22,30 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="order-2 lg:order-1"
+                        className="order-2 lg:order-1 relative"
                     >
                         <div className="relative">
-                            <div className="absolute -top-4 -left-4 w-24 h-24 bg-teal-100 rounded-full -z-10 animate-pulse"></div>
-                            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-100 rounded-full -z-10 animate-pulse delay-100"></div>
+                            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-secondary/30 -z-10 transform -translate-x-2 -translate-y-2"></div>
                             <motion.img
-                                whileHover={{ scale: 1.03 }}
+                                whileHover={{ scale: 1.01 }}
                                 transition={{ duration: 0.3 }}
                                 src="/wellington-brito-about.jpg"
                                 alt="Wellington Brito - Psicólogo Clínico"
-                                className="rounded-3xl shadow-xl w-full object-cover h-[500px]"
+                                className="shadow-2xl w-full object-cover h-[600px] grayscale hover:grayscale-0 transition-all duration-500"
                             />
+
+                            {/* Iceberg Quote Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 }}
+                                className="absolute bottom-8 right-8 left-8 bg-surface/80 backdrop-blur-md p-6 border border-white/20 shadow-neu"
+                            >
+                                <p className="font-serif italic text-lg text-primary">
+                                    "The mind is like an iceberg, it floats with one-seventh of its bulk above water."
+                                </p>
+                                <p className="text-xs font-bold mt-2 text-secondary uppercase tracking-widest">Sigmund Freud</p>
+                            </motion.div>
                         </div>
                     </motion.div>
 
@@ -41,17 +56,21 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                         className="order-1 lg:order-2"
                     >
-                        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-                            Sobre Wellington Brito
+                        <h2 className="text-4xl sm:text-5xl font-display font-black text-primary mb-8 leading-tight">
+                            SOBRE <br />
+                            <span className="text-secondary">WELLINGTON BRITO</span>
                         </h2>
-                        <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                            Olá, sou Wellington Brito. Como psicólogo clínico, dedico minha carreira a ajudar pessoas a encontrarem caminhos para uma vida mais plena e significativa.
-                        </p>
-                        <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                            Acredito que cada indivíduo possui uma história única e um potencial inato para o crescimento. Minha abordagem é baseada na escuta ativa, no respeito e na construção de um vínculo terapêutico sólido.
-                        </p>
 
-                        <div className="grid sm:grid-cols-2 gap-4">
+                        <div className="space-y-6 text-lg text-textSecondary font-sans leading-relaxed">
+                            <p>
+                                Olá, sou Wellington Brito. Como psicólogo clínico, dedico minha carreira a ajudar pessoas a encontrarem caminhos para uma vida mais plena e significativa.
+                            </p>
+                            <p>
+                                Acredito que cada indivíduo possui uma história única e um potencial inato para o crescimento. Minha abordagem é baseada na escuta ativa, no respeito e na construção de um vínculo terapêutico sólido.
+                            </p>
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-6 mt-10">
                             {benefits.map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -59,11 +78,12 @@ const About = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="flex items-center gap-3"
+                                    className="flex items-center gap-3 group"
                                 >
-                                    <CheckCircle className="text-teal-600 w-5 h-5 flex-shrink-0" />
-                                    <span className="text-slate-700 font-medium">{item}</span>
+                                    <div className="p-1 rounded-full bg-secondary/20 group-hover:bg-secondary/40 transition-colors">
+                                        <CheckCircle className="text-primary w-5 h-5 flex-shrink-0" />
+                                    </div>
+                                    <span className="text-primary font-medium">{item}</span>
                                 </motion.div>
                             ))}
                         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -25,14 +25,14 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-surface/70 backdrop-blur-lg border-b border-primary/5 py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     <div className="flex-shrink-0 flex items-center">
-                        <a href="#" className="text-2xl font-bold text-slate-800 tracking-tight">
-                            Wellington Brito <span className="text-teal-600">PSI</span>
+                        <a href="#" className="text-2xl font-display font-black text-primary tracking-tighter">
+                            Wellington Brito <span className="text-secondary">PSI</span>
                         </a>
                     </div>
 
@@ -42,14 +42,14 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-slate-600 hover:text-teal-600 font-medium transition-colors duration-200"
+                                className="text-textPrimary hover:text-secondary font-sans font-medium transition-colors duration-200"
                             >
                                 {link.name}
                             </a>
                         ))}
                         <a
                             href="#contact"
-                            className="bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-teal-700 transition-all duration-200 shadow-lg shadow-teal-600/20 hover:shadow-teal-600/30 transform hover:-translate-y-0.5"
+                            className="bg-primary text-bg px-6 py-2.5 font-display font-bold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:-translate-y-0.5"
                         >
                             Agendar Consulta
                         </a>
@@ -59,7 +59,7 @@ const Navbar = () => {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-slate-600 hover:text-teal-600 focus:outline-none"
+                            className="text-primary hover:text-secondary focus:outline-none"
                         >
                             {isOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
@@ -74,7 +74,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+                        className="md:hidden bg-surface/95 backdrop-blur-xl border-t border-primary/10 overflow-hidden"
                     >
                         <div className="px-4 pt-2 pb-8 space-y-1">
                             {navLinks.map((link) => (
@@ -82,16 +82,16 @@ const Navbar = () => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors"
+                                    className="block px-3 py-4 text-lg font-display font-medium text-primary hover:text-secondary hover:bg-primary/5 rounded-none transition-colors border-b border-primary/5"
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <div className="pt-4 px-3">
+                            <div className="pt-6 px-3">
                                 <a
                                     href="#contact"
                                     onClick={() => setIsOpen(false)}
-                                    className="block w-full text-center bg-teal-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/20"
+                                    className="block w-full text-center bg-primary text-bg px-6 py-4 font-display font-bold hover:bg-primary/90 transition-colors"
                                 >
                                     Agendar Consulta
                                 </a>

@@ -8,20 +8,23 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#2C3E50',      // azul cobalto
-                secondary: '#E67E22',    // laranja queimado
-                accent: '#9B59B6',       // violeta
-                bg: '#F5F7FA',           // fundo claro
-                textPrimary: '#2D2D2D', // texto principal
-                textSecondary: '#7F8C8D', // texto secundário
-                success: '#27AE60',      // verde ação
-                error: '#E74C3C',        // vermelho erro
-                // opcional dark mode colors
-                dark: {
-                    primary: '#1A252F',
-                    bg: '#1E1E1E',
-                    textPrimary: '#E0E0E0',
-                }
+                primary: '#1A1A1A',      // Dark High Contrast
+                secondary: '#E6B8A2',    // Muted Clay
+                accent: '#A8DADC',       // Soft Blue
+                bg: '#F9F7F2',           // Warm Neutral
+                surface: '#FFFFFF',      // White for cards
+                textPrimary: '#1A1A1A',
+                textSecondary: '#4A4A4A',
+                success: '#27AE60',
+                error: '#E74C3C',
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                display: ['Outfit', 'sans-serif'],
+            },
+            boxShadow: {
+                'neu': '5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff',
+                'neu-pressed': 'inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff',
             }
         },
     },
