@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain, Heart, Users, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Services = () => {
     const services = [
@@ -39,20 +40,29 @@ const Services = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.03 }}
+                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
                         >
-                            <div className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-6">
+                            <motion.div
+                                whileHover={{ rotate: 360 }}
+                                transition={{ duration: 0.6 }}
+                                className="w-14 h-14 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors"
+                            >
                                 <service.icon size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">
+                            </motion.div>
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-slate-600 leading-relaxed">
                                 {service.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -63,10 +63,11 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.8 }}
-                            className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl max-w-xs hidden sm:block"
+                            whileHover={{ scale: 1.05 }}
+                            className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl max-w-xs hidden sm:block animate-float"
                         >
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
+                                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 animate-pulse-ring">
                                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>

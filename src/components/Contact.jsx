@@ -1,12 +1,18 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
         <section id="contact" className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16">
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
                         <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
                             Entre em Contato
                         </h2>
@@ -56,9 +62,15 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-100"
+                    >
                         <form className="space-y-6">
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">Nome Completo</label>
@@ -84,14 +96,16 @@ const Contact = () => {
                                     placeholder="Como posso ajudar?"
                                 ></textarea>
                             </div>
-                            <button
+                            <motion.button
                                 type="submit"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                                 className="w-full bg-teal-600 text-white font-medium py-4 rounded-xl hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/20"
                             >
                                 Enviar Mensagem
-                            </button>
+                            </motion.button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = () => {
     const benefits = [
@@ -13,19 +14,33 @@ const About = () => {
         <section id="about" className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="order-2 lg:order-1">
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="order-2 lg:order-1"
+                    >
                         <div className="relative">
-                            <div className="absolute -top-4 -left-4 w-24 h-24 bg-teal-100 rounded-full -z-10"></div>
-                            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
-                            <img
+                            <div className="absolute -top-4 -left-4 w-24 h-24 bg-teal-100 rounded-full -z-10 animate-pulse"></div>
+                            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-100 rounded-full -z-10 animate-pulse delay-100"></div>
+                            <motion.img
+                                whileHover={{ scale: 1.03 }}
+                                transition={{ duration: 0.3 }}
                                 src="/wellington-brito-about.jpg"
                                 alt="Wellington Brito - Psicólogo Clínico"
                                 className="rounded-3xl shadow-xl w-full object-cover h-[500px]"
                             />
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="order-1 lg:order-2">
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="order-1 lg:order-2"
+                    >
                         <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
                             Sobre Wellington Brito
                         </h2>
@@ -38,13 +53,21 @@ const About = () => {
 
                         <div className="grid sm:grid-cols-2 gap-4">
                             {benefits.map((item, index) => (
-                                <div key={index} className="flex items-center gap-3">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    className="flex items-center gap-3"
+                                >
                                     <CheckCircle className="text-teal-600 w-5 h-5 flex-shrink-0" />
                                     <span className="text-slate-700 font-medium">{item}</span>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
