@@ -48,12 +48,12 @@ const Hero = () => {
                         className="relative"
                     >
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 aspect-[4/5] lg:aspect-square bg-slate-200">
-                            {/* Placeholder for Wellington Brito's photo */}
+                            {/* Image representing balance, therapy and emotional wellness */}
                             <img
-                                src="/wellington-brito.jpg"
-                                alt="Wellington Brito Psicólogo"
+                                src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                alt="Equilíbrio e Bem-estar Emocional - Terapia"
                                 className="w-full h-full object-cover"
-                                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80' }}
+                                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80' }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
                         </div>

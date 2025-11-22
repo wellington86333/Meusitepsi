@@ -18,8 +18,8 @@ const About = () => {
                             <div className="absolute -top-4 -left-4 w-24 h-24 bg-teal-100 rounded-full -z-10"></div>
                             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
                             <img
-                                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                alt="Consultório de Psicologia"
+                                src="/wellington-brito-about.jpg"
+                                alt="Wellington Brito - Psicólogo Clínico"
                                 className="rounded-3xl shadow-xl w-full object-cover h-[500px]"
                             />
                         </div>
