@@ -1,27 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
-    <loc>https://wellingtonbritopsi.com/</loc>
-    <lastmod>2025-11-22</lastmod>
+    <loc>https://wellingtonbritopsi.com.br/</loc>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wellingtonbritopsi.com.br/wellington-brito.jpg</image:loc>
+      <image:title>Wellington Brito - Psicanalista Clínico</image:title>
+    </image:image>
   </url>
+  
+  <!-- About Section -->
   <url>
-    <loc>https://wellingtonbritopsi.com/#about</loc>
-    <lastmod>2025-11-22</lastmod>
+    <loc>https://wellingtonbritopsi.com.br/#about</loc>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Services Section -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#services</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Psycho Quiz -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#quiz</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Anxiety Calculator -->
   <url>
-    <loc>https://wellingtonbritopsi.com/#services</loc>
-    <lastmod>2025-11-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://wellingtonbritopsi.com.br/#anxiety-calculator</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Free Test -->
   <url>
-    <loc>https://wellingtonbritopsi.com/#blog</loc>
-    <lastmod>2025-11-22</lastmod>
+    <loc>https://wellingtonbritopsi.com.br/#free-test</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Section -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#blog</loc>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- Testimonials -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#testimonials</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#faq</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/#contact</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Language Versions -->
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/?lang=pt</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/?lang=en</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://wellingtonbritopsi.com.br/?lang=es</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>

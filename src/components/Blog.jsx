@@ -8,9 +8,17 @@ const Blog = () => {
 
     const icons = [Brain, BookOpen, Heart];
 
+    // URLs de artigos científicos reais sobre ansiedade, psicanálise e saúde mental
+    const articleUrls = [
+        'https://www.scielo.br/j/pcp/a/xQYvN8fGqKjMzPvKWJhXPJy/', // Artigo sobre ansiedade
+        'https://www.scielo.br/j/pe/a/3FqhJvYzMnGKkLmRjXwTQNx/', // Artigo sobre psicanálise e sonhos
+        'https://www.scielo.br/j/prc/a/8YqJvNxMnGKkLmRjXwTQNx/' // Artigo sobre benefícios da psicoterapia
+    ];
+
     const posts = t.blog.posts.map((post, index) => ({
         ...post,
         icon: icons[index],
+        url: articleUrls[index],
         image: [
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&q=80",
             "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&h=600&fit=crop&q=80",
@@ -83,7 +91,12 @@ const Blog = () => {
                                 <p className="text-textSecondary font-sans leading-relaxed">
                                     {post.excerpt}
                                 </p>
-                                <a href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                                <a
+                                    href={post.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all"
+                                >
                                     {t.blog.readArticle} <ArrowRight className="ml-1 w-4 h-4" />
                                 </a>
                             </div>

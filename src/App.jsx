@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,6 +13,12 @@ import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import Toast from './components/Toast';
 import WhatsAppButton from './components/WhatsAppButton';
+import SEOHead from './components/SEOHead';
+import PsychoQuiz from './components/PsychoQuiz';
+import AnxietyCalculator from './components/AnxietyCalculator';
+import StatsCounter from './components/StatsCounter';
+import ExitIntentPopup from './components/ExitIntentPopup';
+import SocialProof from './components/SocialProof';
 
 export default function App() {
     const [scrolled, setScrolled] = useState(false);
@@ -30,32 +37,43 @@ export default function App() {
     };
 
     return (
-        <div className="font-sans text-textPrimary bg-bg selection:bg-secondary selection:text-primary overflow-x-hidden">
-            <Navbar scrolled={scrolled} />
+        <HelmetProvider>
+            <div className="font-sans text-textPrimary bg-bg selection:bg-secondary selection:text-primary overflow-x-hidden">
+                {/* SEO Meta Tags */}
+                <SEOHead />
 
-            <main>
-                <Hero />
-                <About />
-                <Services />
-                <FreeTest />
-                <Blog />
-                <Testimonials />
-                <FAQ />
-                <Contact />
-            </main>
+                <Navbar scrolled={scrolled} />
 
-            <Footer />
+                <main>
+                    <Hero />
+                    <StatsCounter />
+                    <About />
+                    <Services />
+                    <PsychoQuiz />
+                    <AnxietyCalculator />
+                    <FreeTest />
+                    <Blog />
+                    <Testimonials />
+                    <FAQ />
+                    <Contact />
+                </main>
 
-            <WhatsAppButton />
-            <ChatWidget />
+                <Footer />
 
-            {toast && (
-                <Toast
-                    message={toast.message}
-                    type={toast.type}
-                    onClose={() => setToast(null)}
-                />
-            )}
-        </div>
+                {/* Fixed Elements */}
+                <WhatsAppButton />
+                <ChatWidget />
+                <ExitIntentPopup />
+                <SocialProof />
+
+                {toast && (
+                    <Toast
+                        message={toast.message}
+                        type={toast.type}
+                        onClose={() => setToast(null)}
+                    />
+                )}
+            </div>
+        </HelmetProvider>
     );
 }

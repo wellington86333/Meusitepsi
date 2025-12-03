@@ -1,3 +1,24 @@
+# Robots.txt - Wellington Brito PSI
+# Otimizado para SEO e crawlers
+
+# Permitir todos os crawlers
 User-agent: *
 Allow: /
-Sitemap: https://wellingtonbritopsi.com/sitemap.xml
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Crawlers específicos
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Sitemap
+Sitemap: https://wellingtonbritopsi.com.br/sitemap.xml

@@ -36,7 +36,7 @@ export const translations = {
             paragraph1: "Olá, sou Wellington Brito. Como psicólogo clínico, dedico minha carreira a ajudar pessoas a encontrarem caminhos para uma vida mais plena e significativa.",
             paragraph2: "Acredito que cada indivíduo possui uma história única e um potencial inato para o crescimento. Minha abordagem é baseada na escuta ativa, no respeito e na construção de um vínculo terapêutico sólido.",
             benefits: [
-                "Abordagem Humanista e Acolhedora",
+                "Escuta Analítica e Transferência",
                 "Sigilo e Ética Profissional",
                 "Experiência em Ansiedade e Depressão",
                 "Atendimento Personalizado"
@@ -48,7 +48,7 @@ export const translations = {
             badge: "Áreas de Atuação",
             title: "COMO POSSO",
             titleHighlight: "AJUDAR VOCÊ?",
-            description: "Ofereço diferentes modalidades de atendimento para atender às suas necessidades específicas com uma abordagem humanista.",
+            description: "Através da psicanálise, mergulhamos nas profundezas do inconsciente para desvendar os mistérios que movem seus sintomas, padrões e angústias. Uma jornada de descoberta que vai além do óbvio.",
             items: [
                 {
                     title: "Ansiedade e Pânico",
@@ -284,7 +284,7 @@ export const translations = {
             paragraph1: "Hello, I'm Wellington Brito. As a clinical psychologist, I dedicate my career to helping people find paths to a fuller and more meaningful life.",
             paragraph2: "I believe that each individual has a unique story and an innate potential for growth. My approach is based on active listening, respect, and building a solid therapeutic bond.",
             benefits: [
-                "Humanistic & Welcoming Approach",
+                "Analytical Listening & Transference",
                 "Professional Confidentiality & Ethics",
                 "Experience in Anxiety & Depression",
                 "Personalized Care"
@@ -296,7 +296,7 @@ export const translations = {
             badge: "Areas of Practice",
             title: "HOW CAN I",
             titleHighlight: "HELP YOU?",
-            description: "I offer different types of care to meet your specific needs with a humanistic approach.",
+            description: "Through psychoanalysis, we dive into the depths of the unconscious to unravel the mysteries behind your symptoms, patterns, and anxieties. A journey of discovery that goes beyond the obvious.",
             items: [
                 {
                     title: "Anxiety & Panic",
@@ -532,7 +532,7 @@ export const translations = {
             paragraph1: "Hola, soy Wellington Brito. Como psicólogo clínico, dedico mi carrera a ayudar a las personas a encontrar caminos hacia una vida más plena y significativa.",
             paragraph2: "Creo que cada individuo tiene una historia única y un potencial innato para el crecimiento. Mi enfoque se basa en la escucha activa, el respeto y la construcción de un vínculo terapéutico sólido.",
             benefits: [
-                "Enfoque Humanista y Acogedor",
+                "Escucha Analítica y Transferencia",
                 "Confidencialidad y Ética Profesional",
                 "Experiencia en Ansiedad y Depresión",
                 "Atención Personalizada"
@@ -544,7 +544,7 @@ export const translations = {
             badge: "Áreas de Práctica",
             title: "¿CÓMO PUEDO",
             titleHighlight: "AYUDARTE?",
-            description: "Ofrezco diferentes tipos de atención para satisfacer tus necesidades específicas con un enfoque humanista.",
+            description: "A través del psicoanálisis, nos sumergimos en las profundidades del inconsciente para desentrañar los misterios detrás de tus síntomas, patrones y angustias. Un viaje de descubrimiento que va más allá de lo obvio.",
             items: [
                 {
                     title: "Ansiedad y Pánico",
