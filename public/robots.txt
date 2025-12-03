@@ -1,24 +1,158 @@
 # Robots.txt - Wellington Brito PSI
-# Otimizado para SEO e crawlers
+# Otimizado para motores de busca mundiais
+# Última atualização: 2025-12-02
 
-# Permitir todos os crawlers
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /*.json$
-Disallow: /node_modules/
+# ============================================
+# MOTORES DE BUSCA PRINCIPAIS
+# ============================================
 
-# Crawlers específicos
+# Google (Global)
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# Google Images
 User-agent: Googlebot-Image
 Allow: /
 
+# Google Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing (Microsoft)
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
 
-# Sitemap
+# Yahoo (Verizon Media)
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Yandex (Rússia)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu (China)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Sogou (China)
+User-agent: Sogou
+Allow: /
+Crawl-delay: 2
+
+# Naver (Coreia do Sul)
+User-agent: Yeti
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# MOTORES DE BUSCA REGIONAIS
+# ============================================
+
+# Seznam (República Tcheca)
+User-agent: SeznamBot
+Allow: /
+
+# Qwant (França)
+User-agent: Qwantify
+Allow: /
+
+# Ecosia (Alemanha - Ecológico)
+User-agent: Ecosia
+Allow: /
+
+# ============================================
+# BOTS DE REDES SOCIAIS
+# ============================================
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+# WhatsApp
+User-agent: WhatsApp
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# ============================================
+# FERRAMENTAS DE SEO E ANÁLISE
+# ============================================
+
+# Ahrefs
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+# SEMrush
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
+# Moz
+User-agent: rogerbot
+Allow: /
+Crawl-delay: 2
+
+# Majestic
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 2
+
+# ============================================
+# REGRAS GERAIS
+# ============================================
+
+# Todos os outros bots
+User-agent: *
+Allow: /
+
+# Bloquear acesso a arquivos sensíveis
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# ============================================
+# SITEMAPS
+# ============================================
+
+# Sitemap principal
 Sitemap: https://wellingtonbritopsi.com.br/sitemap.xml
+
+# ============================================
+# INFORMAÇÕES ADICIONAIS
+# ============================================
+
+# Host preferencial (evita conteúdo duplicado)
+Host: wellingtonbritopsi.com.br
+
+# Tempo de rastreamento (crawl-delay padrão)
+# Valores baixos = rastreamento mais rápido
+# Valores altos = menos carga no servidor
