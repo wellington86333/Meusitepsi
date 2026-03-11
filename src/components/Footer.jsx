@@ -61,7 +61,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
+                <div className="border-t border-white/10 pt-8 text-center text-sm text-bg/60 flex flex-col md:flex-row justify-between items-center">
                     <p>&copy; {new Date().getFullYear()} Wellington Brito Psicologia.</p>
                     <p className="mt-2 md:mt-0">Desenvolvido com <span className="text-red-500">❤</span> e Psicanálise.</p>
                 </div>

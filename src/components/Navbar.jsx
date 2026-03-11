@@ -63,7 +63,10 @@ const Navbar = () => {
                         {/* Language Selector */}
                         <div className="relative">
                             <button
-                                onClick={() => setShowLangMenu(!showLangMenu)}
+                                onClick={() => {
+                                    setShowLangMenu(!showLangMenu);
+                                    setIsOpen(false);
+                                }}
                                 className="flex items-center gap-2 px-3 py-2 border border-primary/20 hover:border-secondary transition-colors"
                             >
                                 <Globe size={18} />
@@ -109,14 +112,20 @@ const Navbar = () => {
                     <div className="md:hidden flex items-center gap-4">
                         {/* Mobile Language Selector */}
                         <button
-                            onClick={() => setShowLangMenu(!showLangMenu)}
+                            onClick={() => {
+                                setShowLangMenu(!showLangMenu);
+                                setIsOpen(false);
+                            }}
                             className="text-primary hover:text-secondary"
                         >
                             <Globe size={24} />
                         </button>
 
                         <button
-                            onClick={() => setIsOpen(!isOpen)}
+                            onClick={() => {
+                                setIsOpen(!isOpen);
+                                setShowLangMenu(false);
+                            }}
                             className="text-primary hover:text-secondary focus:outline-none"
                         >
                             {isOpen ? <X size={28} /> : <Menu size={28} />}

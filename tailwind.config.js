@@ -21,6 +21,7 @@ export default {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
                 display: ['Outfit', 'sans-serif'],
+                serif: ['Playfair Display', 'Georgia', 'serif'],
             },
             boxShadow: {
                 'neu': '5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff',

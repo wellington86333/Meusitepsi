@@ -42,15 +42,6 @@ export default function ExitIntentPopup() {
         // Send to email marketing system
         console.log('Exit intent email captured:', email);
 
-        // Google Analytics event
-        if (window.gtag) {
-            window.gtag('event', 'lead_capture', {
-                event_category: 'engagement',
-                event_label: 'exit_intent_popup',
-                value: 1
-            });
-        }
-
         setIsSubmitted(true);
 
         // Close popup after 3 seconds
@@ -61,14 +52,6 @@ export default function ExitIntentPopup() {
 
     const handleClose = () => {
         setIsVisible(false);
-
-        // Track popup dismissal
-        if (window.gtag) {
-            window.gtag('event', 'popup_dismissed', {
-                event_category: 'engagement',
-                event_label: 'exit_intent_popup'
-            });
-        }
     };
 
     return (

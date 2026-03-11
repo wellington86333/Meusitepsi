@@ -25,10 +25,19 @@ const Testimonials = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-20">
+                    {/* Badge — consistente com Services, FAQ, Blog */}
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-secondary font-bold tracking-widest uppercase text-sm"
+                    >
+                        {t.testimonials.badge || 'Depoimentos'}
+                    </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-4xl sm:text-5xl font-display font-black text-primary mb-4"
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl sm:text-5xl font-display font-black text-primary mt-4 mb-4"
                     >
                         {t.testimonials.title} <br /> {t.testimonials.titleHighlight}
                     </motion.h2>
@@ -58,10 +67,11 @@ const Testimonials = () => {
                             </p>
 
                             <div className="flex items-center gap-4 border-t border-primary/5 pt-6">
+                                {/* Avatar com hover para graceful colorize */}
                                 <img
                                     src={testimonial.image}
                                     alt={testimonial.name}
-                                    className="w-12 h-12 rounded-full object-cover grayscale"
+                                    className="w-12 h-12 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 />
                                 <div>
                                     <div className="font-display font-bold text-primary">

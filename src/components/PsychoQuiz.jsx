@@ -228,14 +228,6 @@ export default function PsychoQuiz() {
         console.log('Email capturado:', email);
         setShowResults(true);
         setShowEmailCapture(false);
-
-        // Google Analytics event
-        if (window.gtag) {
-            window.gtag('event', 'quiz_completed', {
-                event_category: 'engagement',
-                event_label: 'psycho_quiz'
-            });
-        }
     };
 
     const progress = ((currentQuestion + 1) / questions[language].length) * 100;
@@ -313,14 +305,14 @@ export default function PsychoQuiz() {
                                             transition={{ delay: index * 0.1 }}
                                             onClick={() => handleAnswer(option.id)}
                                             className={`w-full text-left p-6 rounded-xl border-2 transition-all duration-300 ${answers[currentQuestion] === option.id
-                                                    ? 'border-primary bg-primary/5 shadow-lg'
-                                                    : 'border-gray-200 hover:border-primary/50 hover:bg-gray-50'
+                                                ? 'border-primary bg-primary/5 shadow-lg'
+                                                : 'border-gray-200 hover:border-primary/50 hover:bg-gray-50'
                                                 }`}
                                         >
                                             <div className="flex items-center gap-4">
                                                 <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center ${answers[currentQuestion] === option.id
-                                                        ? 'border-primary bg-primary'
-                                                        : 'border-gray-300'
+                                                    ? 'border-primary bg-primary'
+                                                    : 'border-gray-300'
                                                     }`}>
                                                     {answers[currentQuestion] === option.id && (
                                                         <CheckCircle className="w-5 h-5 text-white" />

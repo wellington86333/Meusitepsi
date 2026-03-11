@@ -96,6 +96,7 @@ export const translations = {
         },
         // Testimonials
         testimonials: {
+            badge: "O Que Dizem",
             title: "O QUE DIZEM",
             titleHighlight: "MEUS PACIENTES",
             items: [
@@ -344,6 +345,7 @@ export const translations = {
         },
         // Testimonials
         testimonials: {
+            badge: "Testimonials",
             title: "WHAT MY",
             titleHighlight: "PATIENTS SAY",
             items: [
@@ -592,6 +594,7 @@ export const translations = {
         },
         // Testimonials
         testimonials: {
+            badge: "Testimonios",
             title: "LO QUE DICEN",
             titleHighlight: "MIS PACIENTES",
             items: [

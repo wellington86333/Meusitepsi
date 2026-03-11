@@ -14,7 +14,7 @@ const Services = () => {
     }));
 
     return (
-        <section id="services" className="py-24 bg-bg">
+        <section id="services" className="py-24 bg-surface">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <motion.span
@@ -51,11 +51,11 @@ const Services = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className="bg-surface p-8 border-2 border-primary/5 hover:border-secondary transition-all duration-300 group relative overflow-hidden"
+                            className="bg-bg p-8 border-2 border-primary/5 hover:border-secondary transition-all duration-300 group relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-secondary/20"></div>
 
-                            <div className="w-14 h-14 bg-primary/5 rounded-none flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-bg transition-colors duration-300">
+                            <div className="w-14 h-14 bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-bg transition-all duration-300 group-hover:scale-110">
                                 <service.icon size={28} strokeWidth={1.5} />
                             </div>
 

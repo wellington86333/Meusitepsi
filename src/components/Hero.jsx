@@ -22,7 +22,8 @@ const Hero = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <span className="inline-block py-2 px-4 border border-primary/20 rounded-none text-primary text-sm font-display font-bold tracking-widest uppercase mb-8 w-max">
+                        {/* Badge com hover state */}
+                        <span className="inline-block py-2 px-4 border border-primary/20 text-primary text-sm font-display font-bold tracking-widest uppercase mb-8 w-max hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">
                             {t.hero.badge}
                         </span>
 
@@ -79,15 +80,15 @@ const Hero = () => {
                             />
                         </div>
 
-                        {/* Floating Element */}
+                        {/* Floating Element — visível em todos os breakpoints */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1 }}
-                            className="absolute -bottom-10 -left-10 bg-surface p-6 border border-primary/10 shadow-neu max-w-xs hidden sm:block"
+                            className="mt-4 sm:mt-0 sm:absolute sm:-bottom-10 sm:-left-10 bg-surface p-5 border border-primary/10 shadow-neu max-w-xs"
                         >
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-primary">
+                                <div className="w-12 h-12 bg-accent/20 flex-shrink-0 flex items-center justify-center text-primary">
                                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
