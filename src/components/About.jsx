@@ -65,6 +65,11 @@ const About = () => {
                             <p>
                                 {t.about.paragraph2}
                             </p>
+                            {t.about.paragraph3 && (
+                                <p className="font-bold text-primary bg-secondary/10 p-4 border-l-4 border-secondary">
+                                    {t.about.paragraph3}
+                                </p>
+                            )}
                         </div>
 
                         <div className="grid sm:grid-cols-2 gap-6 mt-10">

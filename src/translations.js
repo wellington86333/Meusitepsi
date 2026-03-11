@@ -36,6 +36,7 @@ export const translations = {
             titleHighlight: "WELLINGTON BRITO",
             paragraph1: "Olá, sou Wellington Brito, psicólogo clínico. Há anos acompanho pessoas que buscam se entender melhor — seja no dia a dia de uma cidade brasileira, seja na solidão silenciosa de ter recomeado a vida em outro país.",
             paragraph2: "Sei que morar fora do Brasil não é só uma mudança de endereço: é aprender a existir entre culturas, lidar com o luto migratório e construir pertencimento onde tudo ainda é estranho. Meu trabalho é baseado na psicanálise — uma escuta que vai além do sintoma. Atendo de forma totalmente online, em português, para pacientes no Brasil e em qualquer país do mundo.",
+            paragraph3: "Ofereço flexibilidade financeira, com valores que podem ser ajustados conforme sua realidade atual. Além disso, para quem recebe em moedas como Euro, Dólar ou Libra, o câmbio torna o investimento em saúde mental com um profissional brasileiro extremamente vantajoso.",
             benefits: [
                 "Escuta Analítica e Transferência",
                 "Sigilo e Ética Profissional",
@@ -164,7 +165,7 @@ export const translations = {
                 },
                 {
                     question: "Como funciona o pagamento internacional?",
-                    answer: "O pagamento é simples e seguro. Utilizo plataformas como Wise, PayPal ou transferência bancária internacional, que oferecem taxas justas e conversão direta para a sua moeda local."
+                    answer: "O pagamento é simples e seguro. Utilizo plataformas como Wise, PayPal ou transferência bancária internacional, que oferecem taxas justas. Receber em moeda estrangeira permite que o valor da sessão seja muito acessível para você, mantendo a qualidade profissional brasileira."
                 },
                 {
                     question: "Os horários atendem fusos europeus e americanos?",
@@ -228,7 +229,7 @@ export const translations = {
             hours: "Horário de Atendimento",
             hoursValue: "Segunda a Sexta: 19:00 - 23:00 | Sábados: O dia todo",
             timeZoneInfo: "Horário de Brasília (GMT-3)",
-            negotiableValues: "Valores das consultas são negociáveis",
+            negotiableValues: "Valores flexíveis e negociáveis conforme sua realidade financeira",
             platformsTitle: "Plataformas de Atendimento",
             paymentTitle: "Formas de Pagamento",
             formName: "Nome Completo",
@@ -302,6 +303,7 @@ export const translations = {
             titleHighlight: "WELLINGTON BRITO",
             paragraph1: "Hello, I'm Wellington Brito, a clinical psychologist. For years, I've accompanied people who seek to better understand themselves — whether in everyday Brazilian life or in the quiet distance of starting over in a new country.",
             paragraph2: "I know that living abroad is much more than a change of address: it means learning to exist between cultures, navigating migratory grief, and building belonging where everything still feels foreign. My work is grounded in psychoanalysis — a mode of listening that goes beyond symptoms. I offer fully online sessions, in Portuguese, for patients in Brazil and anywhere in the world.",
+            paragraph3: "I offer financial flexibility, with rates that can be adjusted to fit your current situation. Additionally, for those earning in currencies like Euro, Dollar, or Pound, the exchange rate makes investing in mental health with a Brazilian professional highly advantageous.",
             benefits: [
                 "Analytical Listening & Transference",
                 "Professional Confidentiality & Ethics",
@@ -430,7 +432,7 @@ export const translations = {
                 },
                 {
                     question: "How does international payment work?",
-                    answer: "Payment is simple and secure. I use platforms like Wise, PayPal, or international bank transfers, which offer fair rates and direct conversion to your local currency."
+                    answer: "Payment is simple and secure. I use platforms like Wise, PayPal, or international bank transfers, which offer fair rates. Receiving in foreign currency makes the session rate very affordable for you, while maintaining high-quality Brazilian professional care."
                 },
                 {
                     question: "Do the hours accommodate European and American time zones?",
@@ -494,7 +496,7 @@ export const translations = {
             hours: "Office Hours",
             hoursValue: "Mon-Fri: 19:00 - 23:00 | Sat: All day",
             timeZoneInfo: "Brasília Time (GMT-3)",
-            negotiableValues: "Session rates are negotiable",
+            negotiableValues: "Flexible rates negotiable based on your financial situation",
             platformsTitle: "Session Platforms",
             paymentTitle: "Payment Methods",
             formName: "Full Name",
@@ -568,6 +570,7 @@ export const translations = {
             titleHighlight: "WELLINGTON BRITO",
             paragraph1: "Hola, soy Wellington Brito, psicólogo clínico. Llevo años acompañando a personas que buscan comprenderse mejor — ya sea en el día a día de una ciudad brasileña, ya sea en la soledad silenciosa de haber empezado una nueva vida en otro país.",
             paragraph2: "Sé que vivir fuera de Brasil es mucho más que un cambio de dirección: es aprender a existir entre culturas, atravesar el duelo migratorio y construir un sentido de pertenencia donde todo aún es extraño. Mi trabajo se basa en el psicoanálisis — una escucha que va más allá del síntoma. Ofrezco atención totalmente online, en portugués, para pacientes en Brasil y en cualquier país del mundo.",
+            paragraph3: "Ofrezco flexibilidad financiera, con tarifas que pueden ajustarse a su realidad actual. Además, para quienes ganan en monedas como el Euro, el Dólar o la Libra, el tipo de cambio hace que la inversión en salud mental con un profesional brasileño sea extremadamente ventajosa.",
             benefits: [
                 "Escucha Analítica y Transferencia",
                 "Confidencialidad y Ética Profesional",
@@ -760,7 +763,7 @@ export const translations = {
             hours: "Horario de Atención",
             hoursValue: "Lun-Vie: 19:00 - 23:00 | Sáb: Todo el día",
             timeZoneInfo: "Hora de Brasilia (GMT-3)",
-            negotiableValues: "Valores de consulta negociables",
+            negotiableValues: "Tarifas flexibles y negociables según su situación financiera",
             platformsTitle: "Plataformas de Atención",
             paymentTitle: "Formas de Pago",
             formName: "Nombre Completo",

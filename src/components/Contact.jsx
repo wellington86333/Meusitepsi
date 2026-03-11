@@ -43,7 +43,7 @@ const Contact = () => {
                         <p className="text-lg text-textSecondary font-sans mb-4 max-w-md">
                             {t.contact.description}
                         </p>
-                        <p className="text-base text-secondary font-bold mb-12 max-w-md">
+                        <p className="text-lg font-display font-bold text-bg bg-secondary p-4 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] mb-12 max-w-md transform -rotate-1">
                             {t.contact.negotiableValues}
                         </p>
 
