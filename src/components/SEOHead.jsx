@@ -56,6 +56,18 @@ export default function SEOHead({
                 telephone: '+55-11-98765-4321', // Atualizar com número real
                 email: 'contato@wellingtonbritopsi.com.br', // Atualizar com email real
                 priceRange: '$$',
+                areaServed: [
+                    { '@type': 'Country', name: 'Brazil' },
+                    { '@type': 'Country', name: 'Portugal' },
+                    { '@type': 'Country', name: 'United States' },
+                    { '@type': 'Country', name: 'United Kingdom' },
+                    { '@type': 'Country', name: 'Ireland' },
+                    { '@type': 'Country', name: 'Germany' },
+                    { '@type': 'Country', name: 'Spain' },
+                    { '@type': 'Country', name: 'Italy' },
+                    { '@type': 'Country', name: 'Switzerland' },
+                    { '@type': 'Country', name: 'Japan' }
+                ],
                 address: {
                     '@type': 'PostalAddress',
                     addressLocality: 'São Paulo',

@@ -4,7 +4,7 @@ export const translations = {
         meta: {
             title: "Psicólogo Online: Brasileiros no Exterior | Wellington Brito",
             description: "Atendimento em português com psicanálise online para brasileiros no Brasil e exterior. Agende sessões seguras e acolhedoras de onde você estiver.",
-            keywords: "psicólogo para brasileiros no exterior, terapia online em português, psicanálise online, ajuda psicológica no exterior, luto migratório, psicólogo brasileiro europa eua"
+            keywords: "psicólogo para brasileiros no exterior, terapia online em português, psicanálise online, ajuda psicológica no exterior, luto migratório, psicólogo brasileiro Portugal, psicólogo brasileiro EUA, psicólogo brasileiro Reino Unido, psicólogo brasileiro Irlanda, psicólogo brasileiro Alemanha"
         },
         // Navbar
         nav: {
@@ -270,7 +270,7 @@ export const translations = {
         meta: {
             title: "Online Psychologist: Brazilians Abroad | Wellington Brito",
             description: "Portuguese-language online psychoanalysis for Brazilians in Brazil and abroad. Schedule secure and welcoming sessions from anywhere.",
-            keywords: "psychologist for brazilians abroad, online therapy in portuguese, online psychoanalysis, psychological help abroad, migratory grief, brazilian psychologist europe usa"
+            keywords: "psychologist for brazilians abroad, online therapy in portuguese, online psychoanalysis, psychological help abroad, migratory grief, brazilian psychologist Portugal, brazilian psychologist USA, brazilian psychologist UK, brazilian psychologist Ireland, brazilian psychologist Germany"
         },
         // Navbar
         nav: {
@@ -536,7 +536,7 @@ export const translations = {
         meta: {
             title: "Psicólogo Online: Brasileños en el Extranjero | Wellington Brito",
             description: "Psicoanálisis online en portugués para brasileños en Brasil y en el extranjero. Programe sesiones seguras y acogedoras desde cualquier lugar.",
-            keywords: "psicólogo para brasileños en el extranjero, terapia online en portugués, psicoanálisis online, ayuda psicológica en el extranjero, duelo migratorio"
+            keywords: "psicólogo para brasileños en el extranjero, terapia online en portugués, psicoanálisis online, ayuda psicológica en el extranjero, duelo migratorio, psicólogo brasileño Portugal, psicólogo brasileño Estados Unidos, psicólogo brasileño España"
         },
         // Navbar
         nav: {
