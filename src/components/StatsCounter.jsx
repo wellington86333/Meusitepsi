@@ -128,7 +128,7 @@ export default function StatsCounter() {
                 >
                     <div className="inline-block bg-white/10 backdrop-blur-lg px-8 py-4 border border-white/20">
                         <p className="text-bg/90 text-lg font-sans">
-                            <strong className="text-secondary">Registrado</strong> no Conselho Regional de Psicologia (CRP)
+                            <strong className="text-secondary">Atendimento</strong> Qualificado e Ético
                             <span className="mx-2">•</span>
                             Atendimento <strong className="text-secondary">100% Online</strong>
                         </p>

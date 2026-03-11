@@ -8,30 +8,30 @@ export default function SEOHead({
     keywords,
     canonical,
     type = 'website',
-    image = '/wellington-brito.jpg',
+    image = '/wellington-brito-og.png',
     article = null
 }) {
     const { language } = useLanguage();
 
-    const siteUrl = 'https://wellingtonbritopsi.com.br'; // Atualizar com URL real
+    const siteUrl = 'https://wellingtonbritopsi.com';
     const siteName = 'Wellington Brito PSI - Psicanalista Clínico';
 
     const defaultTitles = {
-        pt: 'Wellington Brito PSI - Psicanalista Clínico | Análise do Inconsciente',
-        en: 'Wellington Brito PSI - Clinical Psychoanalyst | Unconscious Analysis',
-        es: 'Wellington Brito PSI - Psicoanalista Clínico | Análisis del Inconsciente'
+        pt: 'Psicólogo Online: Brasileiros no Exterior | Wellington Brito',
+        en: 'Online Psychologist: Brazilians Abroad | Wellington Brito',
+        es: 'Psicólogo Online: Brasileños en el Extranjero | Wellington Brito'
     };
 
     const defaultDescriptions = {
-        pt: 'Psicanalista clínico especializado em análise do inconsciente, interpretação de sonhos e tratamento de ansiedade, depressão e sintomas neuróticos. Atendimento online e presencial.',
-        en: 'Clinical psychoanalyst specialized in unconscious analysis, dream interpretation, and treatment of anxiety, depression, and neurotic symptoms. Online and in-person sessions.',
-        es: 'Psicoanalista clínico especializado en análisis del inconsciente, interpretación de sueños y tratamiento de ansiedad, depresión y síntomas neuróticos. Atención online y presencial.'
+        pt: 'Atendimento em português com psicanálise online para brasileiros no Brasil e exterior. Agende sessões seguras de onde você estiver.',
+        en: 'Portuguese-language online psychoanalysis for Brazilians in Brazil and abroad. Schedule secure sessions from anywhere.',
+        es: 'Psicoanálisis online en português para brasileños en Brasil y en el extranjero. Programe sesiones seguras desde cualquier lugar.'
     };
 
     const defaultKeywords = {
-        pt: 'psicanalista, psicanálise online, análise do inconsciente, interpretação de sonhos, terapia psicanalítica, ansiedade, depressão, sintomas neuróticos, transferência, contratransferência, Freud, Lacan, psicanálise clínica',
-        en: 'psychoanalyst, online psychoanalysis, unconscious analysis, dream interpretation, psychoanalytic therapy, anxiety, depression, neurotic symptoms, transference, countertransference, Freud, Lacan, clinical psychoanalysis',
-        es: 'psicoanalista, psicoanálisis online, análisis del inconsciente, interpretación de sueños, terapia psicoanalítica, ansiedad, depresión, síntomas neuróticos, transferencia, contratransferencia, Freud, Lacan, psicoanálisis clínico'
+        pt: 'psicólogo para brasileiros no exterior, terapia online em português, psicanálise online, ajuda psicológica no exterior, luto migratório, psicólogo brasileiro europa eua, ansiedade expatriados',
+        en: 'psychologist for brazilians abroad, online therapy in portuguese, online psychoanalysis, psychological help abroad, migratory grief, brazilian psychologist europe usa',
+        es: 'psicólogo para brasileños en el extranjero, terapia online en portugués, psicoanálisis online, ayuda psicológica en el extranjero, duelo migratorio',
     };
 
     const finalTitle = title || defaultTitles[language];
@@ -50,8 +50,8 @@ export default function SEOHead({
                 '@id': `${siteUrl}/#organization`,
                 name: siteName,
                 url: siteUrl,
-                logo: `${siteUrl}/wellington-brito.jpg`,
-                image: `${siteUrl}/wellington-brito.jpg`,
+                logo: `${siteUrl}/wellington-brito-og.png`,
+                image: `${siteUrl}/wellington-brito-og.png`,
                 description: finalDescription,
                 telephone: '+55-11-98765-4321', // Atualizar com número real
                 email: 'contato@wellingtonbritopsi.com.br', // Atualizar com email real
@@ -95,7 +95,7 @@ export default function SEOHead({
                 name: 'Wellington Brito',
                 jobTitle: 'Psicanalista Clínico',
                 description: 'Psicanalista clínico com formação em psicanálise freudiana e lacaniana, especializado em análise do inconsciente e tratamento de sintomas neuróticos.',
-                image: `${siteUrl}/wellington-brito.jpg`,
+                image: `${siteUrl}/wellington-brito-og.png`,
                 url: siteUrl,
                 sameAs: [
                     'https://www.instagram.com/wellingtonbritopsi',

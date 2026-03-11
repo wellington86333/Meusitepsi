@@ -2,8 +2,9 @@ export const translations = {
     pt: {
         // Meta
         meta: {
-            title: "Wellington Brito PSI - Psicólogo Clínico",
-            description: "Psicólogo Clínico Wellington Brito. Atendimento especializado para ansiedade, depressão e autoconhecimento. Agende sua consulta online ou presencial."
+            title: "Psicólogo Online: Brasileiros no Exterior | Wellington Brito",
+            description: "Atendimento em português com psicanálise online para brasileiros no Brasil e exterior. Agende sessões seguras e acolhedoras de onde você estiver.",
+            keywords: "psicólogo para brasileiros no exterior, terapia online em português, psicanálise online, ajuda psicológica no exterior, luto migratório, psicólogo brasileiro europa eua"
         },
         // Navbar
         nav: {
@@ -18,12 +19,12 @@ export const translations = {
         },
         // Hero
         hero: {
-            badge: "Psicologia Clínica & Psicanálise",
-            title: "ENCONTRE SEU",
-            titleHighlight: "EQUILÍBRIO.",
+            badge: "Para brasileiros no Brasil e no exterior",
+            title: "TEM COISAS QUE SÓ",
+            titleHighlight: "SE FALA EM PORTUGUÊS.",
             quote: "Das suas vulnerabilidades virá a sua força.",
             quoteAuthor: "— Sigmund Freud",
-            description: "Um espaço seguro e acolhedor para sua jornada de autoconhecimento. Atendimento especializado para ansiedade, depressão e desenvolvimento pessoal.",
+            description: "Psicanálise online para brasileiros fora ou no Brasil. Sem deslocamentos, com um profissional que entende o que é viver entre dois mundos.",
             bookButton: "Agendar Consulta",
             learnMore: "Saiba Mais",
             onlineSessions: "Atendimento Online",
@@ -33,8 +34,8 @@ export const translations = {
         about: {
             title: "SOBRE",
             titleHighlight: "WELLINGTON BRITO",
-            paragraph1: "Olá, sou Wellington Brito. Como psicólogo clínico, dedico minha carreira a ajudar pessoas a encontrarem caminhos para uma vida mais plena e significativa.",
-            paragraph2: "Acredito que cada indivíduo possui uma história única e um potencial inato para o crescimento. Minha abordagem é baseada na escuta ativa, no respeito e na construção de um vínculo terapêutico sólido.",
+            paragraph1: "Olá, sou Wellington Brito, psicólogo clínico. Há anos acompanho pessoas que buscam se entender melhor — seja no dia a dia de uma cidade brasileira, seja na solidão silenciosa de ter recomeado a vida em outro país.",
+            paragraph2: "Sei que morar fora do Brasil não é só uma mudança de endereço: é aprender a existir entre culturas, lidar com o luto migratório e construir pertencimento onde tudo ainda é estranho. Meu trabalho é baseado na psicanálise — uma escuta que vai além do sintoma. Atendo de forma totalmente online, em português, para pacientes no Brasil e em qualquer país do mundo.",
             benefits: [
                 "Escuta Analítica e Transferência",
                 "Sigilo e Ética Profissional",
@@ -156,6 +157,22 @@ export const translations = {
                 {
                     question: "O atendimento é sigiloso?",
                     answer: "Sim, o sigilo é absoluto e garantido pelo Código de Ética Profissional do Psicólogo."
+                },
+                {
+                    question: "É legal fazer terapia com psicólogo brasileiro estando em outro país?",
+                    answer: "Sim, é perfeitamente legal. O Conselho Federal de Psicologia do Brasil autoriza o atendimento online para brasileiros em qualquer lugar do mundo. Mantenho meu CRP ativo e sigo todas as normas éticas brasileiras."
+                },
+                {
+                    question: "Como funciona o pagamento internacional?",
+                    answer: "O pagamento é simples e seguro. Utilizo plataformas como Wise, PayPal ou transferência bancária internacional, que oferecem taxas justas e conversão direta para a sua moeda local."
+                },
+                {
+                    question: "Os horários atendem fusos europeus e americanos?",
+                    answer: "Sim! Minha agenda é flexível para acomodar diferentes fusos horários. Ofereço horários alternativos, incluindo períodos noturnos (horário de Brasília) e sábados."
+                },
+                {
+                    question: "O sigilo é garantido mesmo sendo online?",
+                    answer: "Com certeza. Utilizo plataformas com criptografia de ponta a ponta e sigo o Código de Ética do Psicólogo. Recomendo apenas que você esteja em um local reservado durante a sessão."
                 }
             ]
         },
@@ -231,7 +248,7 @@ export const translations = {
             services: "Serviços",
             contact: "Contato",
             copyright: "© 2025 Wellington Brito PSI. Todos os direitos reservados.",
-            crp: "CRP: 02/15189"
+            crp: "Psicólogo Clínico"
         },
         // ChatWidget
         chatWidget: {
@@ -251,8 +268,9 @@ export const translations = {
     en: {
         // Meta
         meta: {
-            title: "Wellington Brito PSI - Clinical Psychologist",
-            description: "Clinical Psychologist Wellington Brito. Specialized care for anxiety, depression, and self-discovery. Book your appointment online or in-person."
+            title: "Online Psychologist: Brazilians Abroad | Wellington Brito",
+            description: "Portuguese-language online psychoanalysis for Brazilians in Brazil and abroad. Schedule secure and welcoming sessions from anywhere.",
+            keywords: "psychologist for brazilians abroad, online therapy in portuguese, online psychoanalysis, psychological help abroad, migratory grief, brazilian psychologist europe usa"
         },
         // Navbar
         nav: {
@@ -267,12 +285,12 @@ export const translations = {
         },
         // Hero
         hero: {
-            badge: "Clinical Psychology & Psychoanalysis",
-            title: "FIND YOUR",
-            titleHighlight: "BALANCE.",
+            badge: "For Brazilians in Brazil and abroad",
+            title: "SOME THINGS CAN ONLY",
+            titleHighlight: "BE SAID IN PORTUGUESE.",
             quote: "Out of your vulnerabilities will come your strength.",
             quoteAuthor: "— Sigmund Freud",
-            description: "A safe and welcoming space for your journey of self-discovery. Specialized care for anxiety, depression, and personal development.",
+            description: "Online psychoanalysis for Brazilians abroad or in Brazil. No commuting — with a professional who understands what it means to live between two worlds.",
             bookButton: "Book Appointment",
             learnMore: "Learn More",
             onlineSessions: "Online Sessions",
@@ -282,8 +300,8 @@ export const translations = {
         about: {
             title: "ABOUT",
             titleHighlight: "WELLINGTON BRITO",
-            paragraph1: "Hello, I'm Wellington Brito. As a clinical psychologist, I dedicate my career to helping people find paths to a fuller and more meaningful life.",
-            paragraph2: "I believe that each individual has a unique story and an innate potential for growth. My approach is based on active listening, respect, and building a solid therapeutic bond.",
+            paragraph1: "Hello, I'm Wellington Brito, a clinical psychologist. For years, I've accompanied people who seek to better understand themselves — whether in everyday Brazilian life or in the quiet distance of starting over in a new country.",
+            paragraph2: "I know that living abroad is much more than a change of address: it means learning to exist between cultures, navigating migratory grief, and building belonging where everything still feels foreign. My work is grounded in psychoanalysis — a mode of listening that goes beyond symptoms. I offer fully online sessions, in Portuguese, for patients in Brazil and anywhere in the world.",
             benefits: [
                 "Analytical Listening & Transference",
                 "Professional Confidentiality & Ethics",
@@ -405,6 +423,22 @@ export const translations = {
                 {
                     question: "Is the service confidential?",
                     answer: "Yes, confidentiality is absolute and guaranteed by the Psychologist's Professional Code of Ethics."
+                },
+                {
+                    question: "Is it legal to have therapy with a Brazilian psychologist while in another country?",
+                    answer: "Yes, it is perfectly legal. The Brazilian Federal Council of Psychology authorizes online therapy for Brazilians anywhere in the world. I maintain my CRP and follow all Brazilian ethical standards."
+                },
+                {
+                    question: "How does international payment work?",
+                    answer: "Payment is simple and secure. I use platforms like Wise, PayPal, or international bank transfers, which offer fair rates and direct conversion to your local currency."
+                },
+                {
+                    question: "Do the hours accommodate European and American time zones?",
+                    answer: "Yes! My schedule is flexible to accommodate different time zones. I offer alternative times, including evenings (Brasília time) and Saturdays."
+                },
+                {
+                    question: "Is confidentiality guaranteed even online?",
+                    answer: "Absolutely. I use platforms with end-to-end encryption and strictly follow the Psychologist's Code of Ethics. I just recommend you be in a private place during the session."
                 }
             ]
         },
@@ -480,7 +514,7 @@ export const translations = {
             services: "Services",
             contact: "Contact",
             copyright: "© 2025 Wellington Brito PSI. All rights reserved.",
-            crp: "CRP: 02/15189"
+            crp: "Psicólogo Clínico"
         },
         // ChatWidget
         chatWidget: {
@@ -500,8 +534,9 @@ export const translations = {
     es: {
         // Meta
         meta: {
-            title: "Wellington Brito PSI - Psicólogo Clínico",
-            description: "Psicólogo Clínico Wellington Brito. Atención especializada para ansiedad, depresión y autoconocimiento. Reserva tu cita online o presencial."
+            title: "Psicólogo Online: Brasileños en el Extranjero | Wellington Brito",
+            description: "Psicoanálisis online en portugués para brasileños en Brasil y en el extranjero. Programe sesiones seguras y acogedoras desde cualquier lugar.",
+            keywords: "psicólogo para brasileños en el extranjero, terapia online en portugués, psicoanálisis online, ayuda psicológica en el extranjero, duelo migratorio"
         },
         // Navbar
         nav: {
@@ -516,12 +551,12 @@ export const translations = {
         },
         // Hero
         hero: {
-            badge: "Psicología Clínica y Psicoanálisis",
-            title: "ENCUENTRA TU",
-            titleHighlight: "EQUILIBRIO.",
+            badge: "Para brasileños en Brasil y en el exterior",
+            title: "HAY COSAS QUE SOLO",
+            titleHighlight: "SE DICEN EN PORTUGUÉS.",
             quote: "De tus vulnerabilidades saldrá tu fortaleza.",
             quoteAuthor: "— Sigmund Freud",
-            description: "Un espacio seguro y acogedor para tu viaje de autodescubrimiento. Atención especializada para ansiedad, depresión y desarrollo personal.",
+            description: "Psicoanálisis online para brasileños en el exterior o en Brasil. Sin desplazamientos, con un profesional que sabe lo que es vivir entre dos mundos.",
             bookButton: "Reservar Cita",
             learnMore: "Saber Más",
             onlineSessions: "Sesiones Online",
@@ -531,8 +566,8 @@ export const translations = {
         about: {
             title: "ACERCA DE",
             titleHighlight: "WELLINGTON BRITO",
-            paragraph1: "Hola, soy Wellington Brito. Como psicólogo clínico, dedico mi carrera a ayudar a las personas a encontrar caminos hacia una vida más plena y significativa.",
-            paragraph2: "Creo que cada individuo tiene una historia única y un potencial innato para el crecimiento. Mi enfoque se basa en la escucha activa, el respeto y la construcción de un vínculo terapéutico sólido.",
+            paragraph1: "Hola, soy Wellington Brito, psicólogo clínico. Llevo años acompañando a personas que buscan comprenderse mejor — ya sea en el día a día de una ciudad brasileña, ya sea en la soledad silenciosa de haber empezado una nueva vida en otro país.",
+            paragraph2: "Sé que vivir fuera de Brasil es mucho más que un cambio de dirección: es aprender a existir entre culturas, atravesar el duelo migratorio y construir un sentido de pertenencia donde todo aún es extraño. Mi trabajo se basa en el psicoanálisis — una escucha que va más allá del síntoma. Ofrezco atención totalmente online, en portugués, para pacientes en Brasil y en cualquier país del mundo.",
             benefits: [
                 "Escucha Analítica y Transferencia",
                 "Confidencialidad y Ética Profesional",
@@ -654,6 +689,22 @@ export const translations = {
                 {
                     question: "¿El servicio es confidencial?",
                     answer: "Sí, la confidencialidad es absoluta y está garantizada por el Código de Ética Profesional del Psicólogo."
+                },
+                {
+                    question: "¿Es legal hacer terapia con un psicólogo brasileiro estando en otro país?",
+                    answer: "Sí, es perfectamente legal. El Consejo Federal de Psicología de Brasil autoriza la terapia online para brasileños en cualquier parte del mundo. Mantengo mi CRP activo y sigo las normas éticas brasileiras."
+                },
+                {
+                    question: "¿Cómo funciona el pago internacional?",
+                    answer: "El pago es sencillo y seguro. Utilizo plataformas como Wise, PayPal o transferencia bancaria internacional, que ofrecen tasas justas y conversión directa para su moneda local."
+                },
+                {
+                    question: "¿Los horarios se adaptan a los husos horarios europeos y americanos?",
+                    answer: "¡Sí! Mi agenda es flexible para acomodarse a diferentes husos horarios. Ofrezco horarios alternativos, incluyendo períodos nocturnos (hora de Brasilia) y sábados."
+                },
+                {
+                    question: "¿Se garantiza el sigilo incluso siendo online?",
+                    answer: "Por supuesto. Utilizo plataformas con criptografía de extremo a extremo y sigo el Código de Ética del Psicólogo. Recomiendo que esté en un lugar reservado durante la sesión."
                 }
             ]
         },
@@ -729,7 +780,7 @@ export const translations = {
             services: "Servicios",
             contact: "Contacto",
             copyright: "© 2025 Wellington Brito PSI. Todos los derechos reservados.",
-            crp: "CRP: 02/15189"
+            crp: "Psicólogo Clínico"
         },
         // ChatWidget
         chatWidget: {
