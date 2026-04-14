@@ -14,7 +14,7 @@ export default function SEOHead({
     const { language } = useLanguage();
 
     const siteUrl = 'https://wellingtonbritopsi.com';
-    const siteName = 'Wellington Brito PSI - Psicanalista Clínico';
+    const siteName = 'Wellington Brito PSI - Psicanálise Online';
 
     const defaultTitles = {
         pt: 'Psicólogo Online: Brasileiros no Exterior | Wellington Brito',
@@ -53,8 +53,8 @@ export default function SEOHead({
                 logo: `${siteUrl}/wellington-brito-og.png`,
                 image: `${siteUrl}/wellington-brito-og.png`,
                 description: finalDescription,
-                telephone: '+55-11-98765-4321', // Atualizar com número real
-                email: 'contato@wellingtonbritopsi.com.br', // Atualizar com email real
+                telephone: '+44 7512 130453',
+                email: 'wellington.brito@rocketmail.com',
                 priceRange: '$$',
                 areaServed: [
                     { '@type': 'Country', name: 'Brazil' },
@@ -92,13 +92,7 @@ export default function SEOHead({
                     'https://www.facebook.com/wellingtonbritopsi',
                     'https://www.linkedin.com/in/wellingtonbritopsi'
                 ],
-                aggregateRating: {
-                    '@type': 'AggregateRating',
-                    ratingValue: '5.0',
-                    reviewCount: '47',
-                    bestRating: '5',
-                    worstRating: '1'
-                }
+                availableLanguage: ['Portuguese', 'English', 'Spanish']
             },
             // Person
             {
@@ -116,10 +110,7 @@ export default function SEOHead({
                 worksFor: {
                     '@id': `${siteUrl}/#organization`
                 },
-                alumniOf: {
-                    '@type': 'EducationalOrganization',
-                    name: 'Universidade de São Paulo'
-                },
+                
                 knowsAbout: [
                     'Psicanálise',
                     'Análise do Inconsciente',
