@@ -26,23 +26,23 @@ const About = () => {
                 <div className="grid md:grid-cols-2 gap-8 text-textSecondary leading-relaxed">
                     <div className="space-y-4 bg-surface p-6 border border-primary/10 rounded-2xl shadow-sm">
                         <p><strong className="text-primary">Nome completo:</strong> Wellington Brito</p>
-                        <p><strong className="text-primary">Atuação:</strong> Psicólogo com atendimento fundamentado na psicanálise (online)</p>
-                        <p><strong className="text-primary">Formação principal:</strong> Não informada publicamente neste site.</p>
-                        <p><strong className="text-primary">Linha teórica:</strong> Psicanálise (escuta clínica orientada pela tradição freudiana, com abertura a autores contemporâneos).</p>
-                        <p><strong className="text-primary">Experiência clínica:</strong> Tempo de atuação não informado publicamente nesta página.</p>
+                        <p><strong className="text-primary">Atuação:</strong> Psicólogo clínico com atendimento online.</p>
+                        <p><strong className="text-primary">Abordagem clínica:</strong> Atendimento fundamentado na psicanálise.</p>
+                        <p><strong className="text-primary">Público:</strong> Adultos brasileiros no Brasil e no exterior.</p>
+                        <p><strong className="text-primary">Idioma:</strong> Sessões em português.</p>
                     </div>
 
                     <div className="space-y-4 bg-secondary/10 p-6 border-l-4 border-secondary rounded-2xl shadow-sm">
                         <h3 className="font-display font-bold text-primary text-xl">Transparência sobre escopo profissional</h3>
                         <p>
-                            <strong className="text-primary">Psicanalista</strong> e <strong className="text-primary">psicólogo</strong> não são a mesma função.
-                            O psicólogo é formado em Psicologia e, no Brasil, atua com registro profissional no CRP.
+                            Sou <strong className="text-primary">psicólogo</strong>, com prática clínica orientada pela psicanálise.
+                            O atendimento segue princípios de sigilo, ética profissional e escuta qualificada.
                         </p>
                         <p>
-                            O psicanalista atua com formação em psicanálise e prática clínica de escuta.
-                            Para atuação em Psicologia, o registro informado neste site é <strong className="text-primary">CRP 0215189</strong>.
+                            Registro profissional informado neste site: <strong className="text-primary">CRP 0215189</strong>.
+                            Caso deseje, você pode solicitar informações adicionais antes de iniciar o acompanhamento.
                         </p>
-                        <p className="text-primary font-semibold">Se você busca atendimento psicológico regulamentado por conselho, solicite essa informação antes de iniciar.</p>
+                        <p className="text-primary font-semibold">Objetivo: oferecer um primeiro contato claro, acolhedor e sem promessas irreais de resultado.</p>
                     </div>
                 </div>
             </div>
