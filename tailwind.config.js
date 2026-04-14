@@ -8,13 +8,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#1E3A8A',      // Trust Blue
-                secondary: '#14B8A6',    // Calm Teal
-                accent: '#F59E0B',       // Warm Highlight
-                bg: '#F5F7FF',           // Light Indigo Tint
+                primary: '#2F4858',      // Deep Slate Blue
+                secondary: '#5FA8A0',    // Soft Teal
+                accent: '#C9A66B',       // Muted Sand
+                bg: '#F7F8FA',           // Soft Neutral
                 surface: '#FFFFFF',
-                textPrimary: '#0F172A',
-                textSecondary: '#475569',
+                textPrimary: '#1F2D36',
+                textSecondary: '#5B6B76',
                 success: '#27AE60',
                 error: '#E74C3C',
             },

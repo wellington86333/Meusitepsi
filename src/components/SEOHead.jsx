@@ -228,7 +228,7 @@ export default function SEOHead({
             <meta name="ICBM" content="-23.5505, -46.6333" />
 
             {/* Mobile */}
-            <meta name="theme-color" content="#1a365d" />
+            <meta name="theme-color" content="#2F4858" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
