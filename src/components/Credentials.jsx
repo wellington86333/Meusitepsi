@@ -9,8 +9,8 @@ const Credentials = () => {
                     <div className="p-6 bg-bg border border-primary/10 rounded-2xl shadow-sm">
                         <h3 className="font-bold text-primary mb-3">Formação e cursos</h3>
                         <ul className="list-disc pl-5 space-y-2">
-                            <li>Formação em Psicologia com registro profissional ativo no Conselho Regional de Psicologia.</li>
-                            <li>Formação e estudo clínico em psicanálise aplicados ao atendimento online.</li>
+                            <li>Psicólogo com registro profissional ativo no Conselho Regional de Psicologia (CRP 0215189).</li>
+                            <li>Atendimento clínico fundamentado na psicanálise, com escuta técnica e ética profissional.</li>
                             <li>Cursos e atualização técnica contínua em supervisão, seminários e estudo clínico.</li>
                         </ul>
                     </div>

@@ -8,11 +8,11 @@ const Blog = () => {
 
     const icons = [Brain, BookOpen, Heart];
 
-    // URLs de artigos científicos reais sobre ansiedade, psicanálise e saúde mental
+    // Ligação com artigos e conteúdos de referência na área de saúde mental
     const articleUrls = [
-        'https://www.scielo.br/j/pcp/a/xQYvN8fGqKjMzPvKWJhXPJy/', // Artigo sobre ansiedade
-        'https://www.scielo.br/j/pe/a/3FqhJvYzMnGKkLmRjXwTQNx/', // Artigo sobre psicanálise e sonhos
-        'https://www.scielo.br/j/prc/a/8YqJvNxMnGKkLmRjXwTQNx/' // Artigo sobre benefícios da psicoterapia
+        'https://www.who.int/news-room/fact-sheets/detail/mental-disorders',
+        'https://www.apa.org/topics/psychotherapy',
+        'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental'
     ];
 
     const posts = t.blog.posts.map((post, index) => ({
@@ -69,6 +69,8 @@ const Blog = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group cursor-pointer"
+                            itemScope
+                            itemType="https://schema.org/Article"
                         >
                             <div className="relative overflow-hidden mb-6 border-2 border-primary/10">
                                 <div className="absolute top-4 right-4 bg-surface/90 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary z-10">
@@ -77,6 +79,9 @@ const Blog = () => {
                                 <img
                                     src={post.image}
                                     alt={post.title}
+                                    title={`Artigo: ${post.title}`}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
                                 />
                             </div>
@@ -86,7 +91,7 @@ const Blog = () => {
                                     <span className="text-sm font-bold">5 min read</span>
                                 </div>
                                 <h3 className="text-2xl font-display font-bold text-primary group-hover:text-secondary transition-colors">
-                                    {post.title}
+                                    <span itemProp="headline">{post.title}</span>
                                 </h3>
                                 <p className="text-textSecondary font-sans leading-relaxed">
                                     {post.excerpt}
@@ -94,7 +99,9 @@ const Blog = () => {
                                 <a
                                     href={post.url}
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer external"
+                                    aria-label={`Abrir artigo sobre ${post.title}`}
+                                    title={`Ler mais sobre ${post.title}`}
                                     className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all"
                                 >
                                     {t.blog.readArticle} <ArrowRight className="ml-1 w-4 h-4" />

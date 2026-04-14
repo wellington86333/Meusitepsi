@@ -14,16 +14,16 @@ export default function SEOHead({
     const { language } = useLanguage();
 
     const siteUrl = 'https://wellingtonbritopsi.com';
-    const siteName = 'Wellington Brito PSI - Psicanálise Online';
+    const siteName = 'Wellington Brito PSI - Psicólogo com base em Psicanálise';
 
     const defaultTitles = {
-        pt: 'Psicólogo Online: Brasileiros no Exterior | Wellington Brito',
+        pt: 'Psicólogo Online com atendimento fundamentado na psicanálise | Wellington Brito',
         en: 'Online Psychologist: Brazilians Abroad | Wellington Brito',
         es: 'Psicólogo Online: Brasileños en el Extranjero | Wellington Brito'
     };
 
     const defaultDescriptions = {
-        pt: 'Atendimento em português com psicanálise online para brasileiros no Brasil e exterior. Agende sessões seguras de onde você estiver.',
+        pt: 'Psicólogo online (CRP 0215189) com atendimento fundamentado na psicanálise para brasileiros no Brasil e exterior. Agende sua sessão.',
         en: 'Portuguese-language online psychoanalysis for Brazilians in Brazil and abroad. Schedule secure sessions from anywhere.',
         es: 'Psicoanálisis online en português para brasileños en Brasil y en el extranjero. Programe sesiones seguras desde cualquier lugar.'
     };
@@ -198,6 +198,7 @@ export default function SEOHead({
             <meta property="og:title" content={finalTitle} />
             <meta property="og:description" content={finalDescription} />
             <meta property="og:image" content={finalImage} />
+            <meta property="og:image:alt" content="Psicólogo Wellington Brito - atendimento online fundamentado na psicanálise" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta property="og:site_name" content={siteName} />
@@ -209,12 +210,15 @@ export default function SEOHead({
             <meta name="twitter:title" content={finalTitle} />
             <meta name="twitter:description" content={finalDescription} />
             <meta name="twitter:image" content={finalImage} />
+            <meta name="twitter:image:alt" content="Psicólogo Wellington Brito em atendimento online" />
             <meta name="twitter:creator" content="@wellingtonbritopsi" />
 
             {/* Additional SEO */}
             <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
             <meta name="googlebot" content="index, follow" />
             <meta name="author" content="Wellington Brito" />
+            <meta name="language" content="pt-BR" />
+            <meta name="publisher" content="Wellington Brito PSI" />
             <meta name="revisit-after" content="7 days" />
 
             {/* Geo Tags */}

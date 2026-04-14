@@ -43,7 +43,7 @@ const Hero = () => {
                         </div>
                         <p className="mt-4 text-sm font-semibold text-primary/80">Atendimento sigiloso e profissional.</p>
                         <div className="mt-6 grid sm:grid-cols-3 gap-3">
-                            <div className="glass-card rounded-xl p-3 text-sm text-primary">Atendimento online</div>
+                            <div className="glass-card rounded-xl p-3 text-sm text-primary">Psicólogo com base psicanalítica</div>
                             <div className="glass-card rounded-xl p-3 text-sm text-primary">CRP 0215189</div>
                             <div className="glass-card rounded-xl p-3 text-sm text-primary">Foco em acolhimento</div>
                         </div>

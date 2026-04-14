@@ -14,10 +14,19 @@ const About = () => {
                     Sobre o profissional
                 </motion.h2>
 
+                <div className="mb-8">
+                    <img
+                        src="/wellington-brito-about.jpg"
+                        alt="Psicólogo Wellington Brito em retrato profissional"
+                        loading="eager"
+                        className="w-full h-[320px] object-cover rounded-2xl shadow-lg border border-primary/10"
+                    />
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-8 text-textSecondary leading-relaxed">
                     <div className="space-y-4 bg-surface p-6 border border-primary/10 rounded-2xl shadow-sm">
                         <p><strong className="text-primary">Nome completo:</strong> Wellington Brito</p>
-                        <p><strong className="text-primary">Atuação:</strong> Psicanalista clínico (atendimento online)</p>
+                        <p><strong className="text-primary">Atuação:</strong> Psicólogo com atendimento fundamentado na psicanálise (online)</p>
                         <p><strong className="text-primary">Formação principal:</strong> Não informada publicamente neste site.</p>
                         <p><strong className="text-primary">Linha teórica:</strong> Psicanálise (escuta clínica orientada pela tradição freudiana, com abertura a autores contemporâneos).</p>
                         <p><strong className="text-primary">Experiência clínica:</strong> Tempo de atuação não informado publicamente nesta página.</p>
