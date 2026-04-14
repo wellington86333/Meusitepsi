@@ -14,7 +14,7 @@ const Services = () => {
     }));
 
     return (
-        <section id="services" className="py-24 bg-surface">
+        <section id="services" className="py-24 bg-gradient-to-b from-surface to-bg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <motion.span
@@ -51,11 +51,11 @@ const Services = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className="bg-bg p-8 border-2 border-primary/5 hover:border-secondary transition-all duration-300 group relative overflow-hidden"
+                            className="bg-white/90 p-8 border border-primary/10 rounded-2xl hover:border-secondary/60 transition-all duration-300 group relative overflow-hidden shadow-sm hover:shadow-lg"
                         >
-                            <div className="absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-secondary/20"></div>
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-secondary/25"></div>
 
-                            <div className="w-14 h-14 bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-bg transition-all duration-300 group-hover:scale-110">
+                            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-bg transition-all duration-300 group-hover:scale-110">
                                 <service.icon size={28} strokeWidth={1.5} />
                             </div>
 
