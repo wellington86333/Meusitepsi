@@ -19,6 +19,8 @@ import AnxietyCalculator from './components/AnxietyCalculator';
 import StatsCounter from './components/StatsCounter';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import SocialProof from './components/SocialProof';
+import Credentials from './components/Credentials';
+import HowItWorks from './components/HowItWorks';
 
 export default function App() {
     const [scrolled, setScrolled] = useState(false);
@@ -32,22 +34,18 @@ export default function App() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const showToast = (message, type = 'success') => {
-        setToast({ message, type });
-    };
-
     return (
         <HelmetProvider>
             <div className="font-sans text-textPrimary bg-bg selection:bg-secondary selection:text-primary overflow-x-hidden">
-                {/* SEO Meta Tags */}
                 <SEOHead />
-
                 <Navbar scrolled={scrolled} />
 
                 <main>
                     <Hero />
                     <StatsCounter />
                     <About />
+                    <Credentials />
+                    <HowItWorks />
                     <Services />
                     <PsychoQuiz />
                     <AnxietyCalculator />
@@ -60,7 +58,6 @@ export default function App() {
 
                 <Footer />
 
-                {/* Fixed Elements */}
                 <WhatsAppButton />
                 <ChatWidget />
                 <ExitIntentPopup />

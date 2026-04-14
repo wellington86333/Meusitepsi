@@ -1,88 +1,34 @@
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useLanguage } from '../LanguageContext';
 
 const Testimonials = () => {
-    const { t } = useLanguage();
-
-    const testimonials = t.testimonials.items.map((item, index) => ({
-        ...item,
-        rating: 5,
-        image: [
-            "https://randomuser.me/api/portraits/women/65.jpg",
-            "https://randomuser.me/api/portraits/men/45.jpg",
-            "https://randomuser.me/api/portraits/women/30.jpg",
-            "https://randomuser.me/api/portraits/men/32.jpg",
-            "https://randomuser.me/api/portraits/women/44.jpg",
-            "https://randomuser.me/api/portraits/men/52.jpg"
-        ][index]
-    }));
+    const depoimentos = [
+        {
+            nome: 'Paciente A. (anônimo)',
+            texto: '“Comecei o atendimento em um período de ansiedade intensa. O processo tem sido de compreensão gradual, sem fórmulas prontas, e com escuta respeitosa.”'
+        },
+        {
+            nome: 'Paciente B. (anônimo)',
+            texto: '“Morar fora me trouxe um sentimento de não pertencimento. As sessões em português me ajudaram a organizar emoções e rotina.”'
+        },
+        {
+            nome: 'Exemplo de abordagem',
+            texto: '“Na psicanálise, em vez de respostas rápidas, investigamos padrões de repetição e sentidos pessoais para ampliar consciência e autonomia.”'
+        }
+    ];
 
     return (
-        <section id="testimonials" className="py-24 bg-bg relative">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-24 h-full bg-primary/5 -z-10 hidden lg:block"></div>
-
+        <section id="testimonials" className="py-24 bg-gradient-to-b from-bg to-white relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
-                    {/* Badge — consistente com Services, FAQ, Blog */}
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-secondary font-bold tracking-widest uppercase text-sm"
-                    >
-                        {t.testimonials.badge || 'Depoimentos'}
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl sm:text-5xl font-display font-black text-primary mt-4 mb-4"
-                    >
-                        {t.testimonials.title} <br /> {t.testimonials.titleHighlight}
-                    </motion.h2>
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl sm:text-5xl font-display font-black text-primary">Depoimentos e abordagem clínica</h2>
+                    <p className="mt-4 text-textSecondary">Relatos anônimos, sem promessa de resultado garantido.</p>
                 </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-surface p-8 border border-primary/10 relative"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -5, boxShadow: "5px 5px 0px 0px rgba(26, 26, 26, 1)" }}
-                        >
-                            <Quote className="absolute top-6 right-6 text-secondary/20 w-10 h-10" />
-
-                            <div className="flex gap-1 mb-6 text-secondary">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} fill="currentColor" size={16} />
-                                ))}
-                            </div>
-
-                            <p className="text-textSecondary font-serif italic text-lg mb-8 leading-relaxed">
-                                "{testimonial.text}"
-                            </p>
-
-                            <div className="flex items-center gap-4 border-t border-primary/5 pt-6">
-                                {/* Avatar com hover para graceful colorize */}
-                                <img
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="w-12 h-12 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                                />
-                                <div>
-                                    <div className="font-display font-bold text-primary">
-                                        {testimonial.name}
-                                    </div>
-                                    <div className="text-sm text-textSecondary font-sans">
-                                        {testimonial.location}
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
+                <div className="grid md:grid-cols-3 gap-6">
+                    {depoimentos.map((item, index) => (
+                        <article key={index} className="bg-surface p-6 border border-primary/10 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <p className="text-textSecondary italic leading-relaxed">{item.texto}</p>
+                            <p className="mt-4 font-semibold text-primary">{item.nome}</p>
+                        </article>
                     ))}
                 </div>
             </div>

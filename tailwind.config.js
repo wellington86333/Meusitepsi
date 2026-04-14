@@ -8,13 +8,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#1A1A1A',      // Dark High Contrast
-                secondary: '#E6B8A2',    // Muted Clay
-                accent: '#A8DADC',       // Soft Blue
-                bg: '#F9F7F2',           // Warm Neutral
-                surface: '#FFFFFF',      // White for cards
-                textPrimary: '#1A1A1A',
-                textSecondary: '#4A4A4A',
+                primary: '#1E3A8A',      // Trust Blue
+                secondary: '#14B8A6',    // Calm Teal
+                accent: '#F59E0B',       // Warm Highlight
+                bg: '#F5F7FF',           // Light Indigo Tint
+                surface: '#FFFFFF',
+                textPrimary: '#0F172A',
+                textSecondary: '#475569',
                 success: '#27AE60',
                 error: '#E74C3C',
             },

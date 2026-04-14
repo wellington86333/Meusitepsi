@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: t.nav.home, href: '#home' },
-        { name: t.nav.about, href: '#about' },
+        { name: t.nav.about, href: '#sobre' },
         { name: t.nav.services, href: '#services' },
         { name: t.nav.blog, href: '#blog' },
         { name: t.nav.testimonials, href: '#testimonials' },
@@ -102,9 +102,9 @@ const Navbar = () => {
 
                         <a
                             href="#contact"
-                            className="bg-primary text-bg px-6 py-2.5 font-display font-bold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:-translate-y-0.5"
+                            className="bg-primary text-bg px-6 py-2.5 rounded-xl font-display font-bold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:-translate-y-0.5"
                         >
-                            {t.nav.bookAppointment}
+                            Agendar sessão
                         </a>
                     </div>
 
@@ -187,9 +187,9 @@ const Navbar = () => {
                                 <a
                                     href="#contact"
                                     onClick={() => setIsOpen(false)}
-                                    className="block w-full text-center bg-primary text-bg px-6 py-4 font-display font-bold hover:bg-primary/90 transition-colors"
+                                    className="block w-full text-center bg-primary text-bg px-6 py-4 rounded-xl font-display font-bold hover:bg-primary/90 transition-colors"
                                 >
-                                    {t.nav.bookAppointment}
+                                    Agendar sessão
                                 </a>
                             </div>
                         </div>
